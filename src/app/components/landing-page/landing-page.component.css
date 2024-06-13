@@ -1,25 +1,35 @@
-html, body {
-  height: 100%; 
-  margin: 0;
+h1{
+  color: floralwhite;
+}
+
+.makisu {
+  position: fixed;
+  z-index: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Noto Sans', sans-serif;
-  background-color: #f8ebd0; 
+  width: 500px;
+  height: 770px;
+  background-image: url('makisu.png');
+  background-size: 900px;
+  background-position: center;
+  background-repeat: no-repeat;
+  font-family: "Luckiest Guy";
 }
 
 .landing-container {
-  background-color: bisque;
-    height: 50vh;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    font-family: 'Luckiest Guy', cursive;
-    border: 3px solid black; /* Borde negro de 2px */
-    border-radius: 10px;
-    margin: 20vh 50px;
-    box-shadow: 10px 10px 4px rgba(0, 0, 0, 0.1);
-  }
+  z-index: 1000000;
+  position: fixed;
+  background-color: #373C27;
+  height: 50vh;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-family: "Luckiest Guy", cursive;
+  border-radius: 10px;
+  margin: 20vh 50px;
+  box-shadow: 10px 10px 4px rgba(0, 0, 0, 0.1);
+}
 
   .game-logo {
     width: 150px; /* Ancho del logo */
@@ -32,7 +42,7 @@ html, body {
   
   .button-container {
     background-size: cover;
-    background-color: rgb(252, 201, 139);
+    background-color: #D2D2A4;
     background-position: center;
     margin: 20px;
     border: 3px solid black; /* Borde negro de 2px */
@@ -49,7 +59,7 @@ html, body {
     padding: 10px 20px;
     font-size: 16px;
     cursor: pointer;
-    background-color: #D1F2EB; /* Botón verde menta */
+    background-color: #D2D2A4; /* Botón verde menta */
     color: #000; /* Texto negro */
     border: none;
     border-radius: 10px;
