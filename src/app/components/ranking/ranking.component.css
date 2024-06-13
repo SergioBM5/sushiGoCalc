@@ -1,0 +1,113 @@
+table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  th, td {
+    padding: 8px;
+    text-align: center;
+    border: 1px solid #ddd;
+  }
+  
+  th {
+    background-color: #f2f2f2;
+  }
+  
+  tbody tr:nth-child(odd) {
+    background-color: #f9f9f9;
+  }
+  tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  
+  tbody tr:hover {
+    background-color: #e9e9e9;
+  }
+  
+  h1 {
+    text-align: center;
+    font-family: 'Luckiest Guy', cursive;
+    margin-bottom: 20px;
+  }
+
+  .landing-container {
+    background-color: bisque;
+    width: 100%;
+    height: 98vh; /* Cambiado a 100vh para ocupar toda la pantalla vertical */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-family: 'Luckiest Guy', cursive;
+    border-radius: 10px;
+    background-size: cover;
+    background-position: center;
+  }
+
+
+  .container {
+    background-color: floralwhite;
+    border: 3px solid black; /* Borde negro de 2px */
+    padding: 20px; /* Espacio interno para separar el contenido del borde */
+    max-width: 400px; /* Ancho máximo deseado */
+    margin: 0 auto; /* Centrar horizontalmente */
+    border-radius: 20px;
+  }
+
+  .box {	
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: bisque;
+    border: 5px solid black;
+    border-radius: 20px;
+    max-width: 400px;
+    margin: 180px auto;
+    padding: 20px;
+    height: 50vh;
+  }
+
+  button {
+    font-family: 'Luckiest Guy', cursive;
+    display: block;
+    margin: 10px auto;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #D1F2EB;
+    border: 3px solid black;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  button:hover {
+    background-color: #FCF3CF;
+  }
+
+  .new-game{
+    font-family: 'Luckiest Guy', cursive;
+    display: block;
+    margin: 30px auto;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #D1F2EB; /* Botón verde menta */
+    color: #000; /* Texto negro */
+    border: none;
+    border-radius: 10px;
+  }
+
+  .buttons {
+    margin: 50px auto;
+   }
+   .footer {
+    position: absolute;
+    width: 100%;
+    background-color: grey;
+    color: #fff;
+    text-align: center;
+    text-decoration: underline;
+    }
+    
+   
+  
+  

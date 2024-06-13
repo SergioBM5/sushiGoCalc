@@ -1,0 +1,77 @@
+html, body {
+  height: 100%; 
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Noto Sans', sans-serif;
+  background-color: #f8ebd0; 
+}
+
+.landing-container {
+  background-color: bisque;
+    height: 50vh;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-family: 'Luckiest Guy', cursive;
+    border: 3px solid black; /* Borde negro de 2px */
+    border-radius: 10px;
+    margin: 20vh 50px;
+    box-shadow: 10px 10px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  .game-logo {
+    width: 150px; /* Ancho del logo */
+    height: auto; /* Para mantener la proporción de aspecto */
+    margin: 0 auto; /* Margen automático en todos los lados para centrarlo horizontalmente */
+    display: block; /* Convertir el elemento en bloque para que el margen automático funcione */
+  }
+  
+  
+  
+  .button-container {
+    background-size: cover;
+    background-color: rgb(252, 201, 139);
+    background-position: center;
+    margin: 20px;
+    border: 3px solid black; /* Borde negro de 2px */
+    padding: 10px; /* Espacio interno para separar el contenido del borde */
+    max-width: 400px; /* Ancho máximo deseado */
+    margin: 0 auto; /* Centrar horizontalmente */
+    border-radius: 20px;
+  }
+  
+  button {
+    font-family: 'Luckiest Guy', cursive;
+    display: block;
+    margin: 10px auto;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #D1F2EB; /* Botón verde menta */
+    color: #000; /* Texto negro */
+    border: none;
+    border-radius: 10px;
+  }
+
+
+  
+  button:hover {
+    background-color: #FCF3CF; /* Botón verde claro al pasar el ratón */
+  }
+
+  .footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: grey;
+    color: #fff;
+    text-align: center;
+    text-decoration: underline;
+    }
+    
+
+
+  
+  

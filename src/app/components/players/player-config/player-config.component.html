@@ -1,0 +1,24 @@
+<div class="landing-container">
+    <div class="button-container">
+      <p class="header">Jugadores</p>
+      <div class="player-list">
+        <div class="player-item" *ngFor="let player of players; let i = index">
+          <input type="text" [ngModel]="player.playerName" (ngModelChange)="updatePlayer($event, i)" class="player-input">
+          <button class="delete-button" *ngIf="players.length >= 2" (click)="deletePlayer(i)">Eliminar</button>
+        </div>
+      </div>
+      <div class="button">
+        <button *ngIf="showAddButton" class="add-button" (click)="addPlayer()">
+          <i class="fas fa-plus"></i> <!-- Icono de "+" de Font Awesome -->
+        </button>
+        <button class="play-button" (click)="play()">Comenzar Partida</button>
+      </div>
+    </div>
+  </div>
+  <footer class="footer">
+    <div class="footer-content">
+      <p>&copy; 2024 SushiGoCalc. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+  
+  

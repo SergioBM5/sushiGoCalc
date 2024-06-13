@@ -1,0 +1,32 @@
+<div class="table">
+<div class="container summary-container">
+    <h2>Resumen de la Ronda {{ currentRound }}</h2>
+    <table class="score-table">
+      <thead>
+        <tr>
+          <th>Jugador</th>
+          <th>Puntos</th>
+          <th>Puntos Totales</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let player of players">
+          <td>{{ player.playerName }}</td>
+          <td>{{ getPointsForRound(player, currentRound) }}</td>
+          <td>{{ player.totalPoints }}</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="button-container">
+      <button class="next-round-btn" (click)="goToNextRound()">Siguiente Ronda</button>
+      <button (click)="goBack()">Volver</button>
+    </div>
+  </div>
+</div>
+<footer class="footer">
+  <div class="footer-content">
+    <p>&copy; 2024 SushiGoCalc. Todos los derechos reservados.</p>
+  </div>
+</footer>
+
+  

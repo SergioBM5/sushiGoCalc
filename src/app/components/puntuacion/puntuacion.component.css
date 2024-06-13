@@ -1,0 +1,121 @@
+.container {
+  max-width: 800px;
+  margin: 10px 10px;
+  padding: 10px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.score-table {
+  background-color: #f2f2f2;
+  border: 1px solid #ddd;
+  border-collapse: collapse; /* Colapso de bordes */
+  overflow: hidden; /* Ocultar contenido que se desborda */
+}
+
+.row {
+  display: flex;
+}
+
+.cell {
+  width: 5px;
+  height: 35px;
+  align-items: center;
+  display: flex;
+  flex: 1;
+  padding: 7px;
+  text-align: center;
+  border:  1px solid black;
+  justify-content: center;
+  font-size: 11px;
+}
+
+.header .cell {
+  font-weight: bold;
+  background-color: grey;
+  color: #fff;
+  justify-content: center;
+}
+
+.inputs {
+  margin: 4px;
+  width: 100%;
+  padding: initial;
+  text-align: center;
+}
+
+.buttons {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.buttons button {
+  font-family: 'Arial', sans-serif;
+  font-size: 16px;
+  padding: 10px 20px;
+  margin: 0 10px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  outline: none; /* Eliminar el borde de enfoque */
+}
+
+.buttons button:hover {
+  background-color: #0056b3;
+}
+
+.warning {
+  background-color: #f8d7da;
+  border: 1px solid #f5c6cb;
+  padding: 15px;
+  margin-top: 20px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.warning-icon {
+  float: left;
+  margin-right: 10px;
+  width: 45px;
+}
+
+.warning-icon img {
+  max-width: 100%;
+}
+.blank {	
+  width: 5px;
+  height: 35px;
+  align-items: center;
+  display: flex;
+  flex: 1;
+  padding: 10px;
+  text-align: center;
+  border:  1px solid black;
+  justify-content: center;
+  font-size: 11px;
+  margin: 40px 10px 0px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background-color: #f2f2f2;
+  
+}
+
+.warning-text {
+  font-size: 16px;
+  color: #721c24;
+  margin: 0;
+}
+.footer {
+  position: absolute;
+  width: 100%;
+  background-color: grey;
+  color: #fff;
+  text-align: center;
+  text-decoration: underline;
+  }
+  

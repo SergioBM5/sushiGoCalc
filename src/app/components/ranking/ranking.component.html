@@ -1,0 +1,48 @@
+<div class = "landing-container">
+<div class="container" *ngIf="players.length<2">
+
+  <p>No hay jugadores inscritos</p>
+  <div class=" buttons">
+  <button (click)="home()">Volver a inicio</button>
+  </div>
+</div>
+  
+<div class="container" *ngIf="players.length>=2">
+<h1>Ranking de Jugadores</h1>
+<table>
+  <thead>
+    <tr>
+      <th>Posición</th>
+      <th>Nombre</th>
+      <th>Puntos</th>
+    </tr>
+  </thead>
+  <tbody>
+    <!-- Iterar sobre los jugadores y mostrar su posición, nombre y puntos -->
+    <tr *ngFor="let player of players; let i = index">
+      <td>
+      <span *ngIf="i === 0">
+        <i class="fas fa-crown" style="color: gold;"></i>
+      </span>
+      <span *ngIf="i === 1">
+        <i class="fas fa-crown" style="color: silver;"></i>
+      </span>
+      <span *ngIf="i === 2">
+        <i class="fas fa-crown" style="color: peru;"></i>
+      </span>
+
+      <span> </span>
+      {{ i + 1 }}</td> <!-- Sumar 1 para obtener la posición basada en 1, no en 0 -->
+      <td>{{ player.playerName }}</td>
+      <td>{{ player.totalPoints }}</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+<button *ngIf="players.length>=2" class="new-game" routerLinkActive="active" (click)="newGame()">Nueva Partida</button> 
+</div>
+<footer class="footer">
+  <div class="footer-content">
+    <p>&copy; 2024 SushiGoCalc. Todos los derechos reservados.</p>
+  </div>
+</footer>

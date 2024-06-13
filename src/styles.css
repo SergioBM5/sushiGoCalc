@@ -1,0 +1,21 @@
+/* You can add global styles to this file, and also import other style files */
+/* styles.css (archivo global de estilos) */
+html, body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: #f8ebd0;
+  font-family: 'Luckiest Guy';
+  
+}
+
+.content {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+router-outlet {
+  flex: 1;
+}
+

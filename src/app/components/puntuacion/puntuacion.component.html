@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tabla CSS</title>
+
+</head>
+<div class="row header">
+  <div class="blank">Ronda {{ currentRound }}</div>
+</div>
+<body>
+
+<div class="container">
+  <div class="score-table">
+ 
+    <div class="row header">
+      <div class="cell"></div>
+      <div *ngFor="let player of players" class="cell player-name">{{ player.playerName }}</div>
+    </div>
+    <div class="row">
+      <div class="cell">Maki</div>
+      <div *ngFor="let player of players" class="cell"><input type="number" class="inputs" [(ngModel)]="player.makiCount"></div>
+    </div>
+    <div class="row">
+      <div class="cell">Tempura</div>
+      <div *ngFor="let player of players" class="cell"><input type="number" class="inputs" [(ngModel)]="player.tempuraCount"></div>
+    </div>
+    <div class="row">
+      <div class="cell">Nigiri🦑<input type="checkbox" id="wasabiSquid"></div>
+      <div *ngFor="let player of players" class="cell"><input type="number" class="inputs" [(ngModel)]="player.nigiriSquidCount"></div>
+    </div>
+    <div class="row">
+      <div class="cell">Nigiri🐟<input type="checkbox" id="wasabiSalmon"></div>
+      <div *ngFor="let player of players" class="cell"><input type="number" class="inputs" [(ngModel)]="player.nigiriSalmonCount"></div>
+    </div>
+    <div class="row">
+      <div class="cell">Nigiri🥚<input type="checkbox" id="wasabiEgg"></div>
+      <div *ngFor="let player of players" class="cell"><input type="number" class="inputs" [(ngModel)]="player.nigiriEggCount"></div>
+    </div>
+    <div class="row">
+      <div class="cell">Sashimi</div>
+      <div *ngFor="let player of players" class="cell"><input type="number" class="inputs" [(ngModel)]="player.sashimiCount"></div>
+    </div>
+    <div class="row">
+      <div class="cell">Gyoza</div>
+      <div *ngFor="let player of players" class="cell"><input type="number" class="inputs" [(ngModel)]="player.gyozaCount"></div>
+    </div>
+    <div class="row">
+      <div class="cell">Pudding</div>
+      <div *ngFor="let player of players" class="cell"><input type="number" class="inputs" [(ngModel)]="player.totalPuddings"></div>
+    </div>
+  </div>
+
+  <div class="buttons">
+    <button *ngIf="currentRound < 3" (click)="showRoundSummary()">Siguiente Ronda</button>
+    <button *ngIf="currentRound === 3" (click)="finishGame()">Finalizar Partida</button>
+  </div>
+
+  <div class="warning">
+    <div class="warning-icon">
+      <img src="assets/icono_warning.png" alt="Warning Icon">
+    </div>
+    <div class="warning-text">
+      <p>¡Atención! Si usas algún wasabi, recuerda marcar la casilla para la correcta suma de tus puntos.</p>
+    </div>
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="footer-content">
+    <p>&copy; 2024 SushiGoCalc. Todos los derechos reservados.</p>
+  </div>
+</footer>
+
+
+</body>
+</html>

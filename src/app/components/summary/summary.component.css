@@ -1,0 +1,104 @@
+.inputs{
+    margin: 5px 5px;
+  }
+  
+  .container {
+    text-align: center;
+    width: 100%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-family: 'Luckiest Guy', cursive;
+    border-radius: 10px;
+    background-size: cover;
+    background-position: center;
+  }
+  
+  .buttons {
+    background-color: white;
+    margin: 50px auto;
+  }
+  
+  .score-table {
+    border: 2px solid black;
+    background-color: floralwhite;
+    width: 100%;
+    border-collapse: collapse;
+ 
+  }
+  
+  .score-table th,
+  .score-table td {
+    padding: 8px;
+    text-align: center;
+    border: 1px solid #ddd;
+  }
+
+  .table{
+    border: 2px solid black;
+    max-width: fit-content;
+    margin: 12vh auto;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 10px 10px 4px rgba(0, 0, 0, 0.1);
+    background-color: bisque;
+    overflow: auto; /* Contenedor clearfix */
+  }
+  
+  .score-table th {
+    background-color: #f2f2f2;
+  }
+  
+  .score-table tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  
+  .score-table tbody tr:hover {
+    background-color: #e9e9e9;
+  }
+  
+  .button-container {
+    margin-top: 20px;
+  }
+  
+  button {
+    font-family: 'Luckiest Guy', cursive;
+    display: block;
+    margin: 10px auto;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #D1F2EB;
+    color: #000;
+    border: none;
+    border-radius: 5px;
+  }
+  
+  button:hover {
+    background-color: #FCF3CF;
+  }
+  .footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: grey;
+    color: #fff;
+    text-align: center;
+    text-decoration: underline;
+    }
+    
+   
+  /* Media queries para dispositivos móviles */
+  @media only screen and (max-width: 600px) {
+    .score-table th,
+    .score-table td {
+      padding: 4px;
+    }
+  
+    button {
+      font-size: 14px;
+    }
+    
+  }
+  
