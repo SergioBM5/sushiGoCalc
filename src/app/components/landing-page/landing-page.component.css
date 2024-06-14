@@ -1,87 +1,140 @@
-h1{
+.landing-page {
+  background-color: #f8ebd0;
+  background-image: url('makisu.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 93vh; /* Asegura que ocupe toda la altura de la ventana */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.landing-page h1 {
   color: floralwhite;
 }
 
-.makisu {
-  position: fixed;
-  z-index: 0;
-  padding: 0;
-  box-sizing: border-box;
-  width: 500px;
-  height: 770px;
-  background-image: url('makisu.png');
-  background-size: 900px;
-  background-position: center;
-  background-repeat: no-repeat;
-  font-family: "Luckiest Guy";
-}
-
-.landing-container {
-  z-index: 1000000;
-  position: fixed;
+.landing-page .landing-container {
+  height: 450px;  
+  width: 450px;
+  margin: 22.7vh auto; /* Cambio para centrar horizontalmente */
   background-color: #373C27;
-  height: 50vh;
   text-align: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
   font-family: "Luckiest Guy", cursive;
   border-radius: 10px;
-  margin: 20vh 50px;
   box-shadow: 10px 10px 4px rgba(0, 0, 0, 0.1);
 }
 
-  .game-logo {
-    width: 150px; /* Ancho del logo */
-    height: auto; /* Para mantener la proporción de aspecto */
-    margin: 0 auto; /* Margen automático en todos los lados para centrarlo horizontalmente */
-    display: block; /* Convertir el elemento en bloque para que el margen automático funcione */
-  }
-  
-  
-  
-  .button-container {
-    background-size: cover;
-    background-color: #D2D2A4;
-    background-position: center;
-    margin: 20px;
-    border: 3px solid black; /* Borde negro de 2px */
-    padding: 10px; /* Espacio interno para separar el contenido del borde */
-    max-width: 400px; /* Ancho máximo deseado */
-    margin: 0 auto; /* Centrar horizontalmente */
-    border-radius: 20px;
-  }
-  
-  button {
-    font-family: 'Luckiest Guy', cursive;
-    display: block;
-    margin: 10px auto;
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
-    background-color: #D2D2A4; /* Botón verde menta */
-    color: #000; /* Texto negro */
-    border: none;
-    border-radius: 10px;
-  }
+.landing-page .game-logo {
+  width: 150px;
+  height: auto;
+  margin: 0 auto;
+  display: block;
+}
+
+.landing-page .button-container {
+  margin-top: 20px; /* Separación entre botones y el contenido */
+}
+
+.landing-page button {
+  font-family: 'Luckiest Guy', cursive;
+  display: block;
+  margin: 10px auto;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: #D2D2A4;
+  color: #000;
+  border: none;
+  border-radius: 10px;
+}
+
+.landing-page button:hover {
+  background-color: #FCF3CF;
+}
+
+.landing-page .footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: grey;
+  color: #fff;
+  text-align: center;
+  text-decoration: underline;
+}
 
 
-  
-  button:hover {
-    background-color: #FCF3CF; /* Botón verde claro al pasar el ratón */
+/* Media queries para responsive design */
+@media (max-width: 768px) {
+  .landing-page .landing-container {
+    width: auto;
+    height: auto;
+    margin: 10vh auto;
+    padding: 20px;
   }
 
-  .footer {
-    position: fixed;
-    bottom: 0;
+  
+  .landing-page {
+    width: auto;
+    height: 80vh;
+    margin: 5vh auto;
+    padding: 10px;
+  }
+
+  .landing-page h1 {
+    font-size: 1.5em;
+  }
+
+  .landing-page .game-logo {
+    width: 100px;
+  }
+
+  .landing-page button {
+    width: 80%;
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  .landing-page .button-container {
     width: 100%;
-    background-color: grey;
-    color: #fff;
-    text-align: center;
-    text-decoration: underline;
-    }
-    
+    margin-top: 15px;
+  }
+}
 
+@media (max-width: 480px) {
+  .landing-page .landing-container {
+    width: auto;
+    height: auto;
+    margin: 5vh auto;
+    padding: 10px;
+  }
 
-  
-  
+  .landing-page {
+    width: auto;
+    height: 80vh;
+    margin: 5vh auto;
+    padding: 10px;
+  }
+
+  .landing-page h1 {
+    font-size: 1.2em;
+  }
+
+  .landing-page .game-logo {
+    width: 80px;
+  }
+
+  .landing-page button {
+    width: 90%;
+    font-size: 12px;
+    padding: 8px;
+  }
+
+  .landing-page .button-container {
+    width: 100%;
+    margin-top: 10px;
+  }
+}

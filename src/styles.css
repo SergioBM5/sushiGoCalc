@@ -1,12 +1,9 @@
-/* You can add global styles to this file, and also import other style files */
 /* styles.css (archivo global de estilos) */
 html, body {
+  height: 100%;
   margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+  font-family: sans-serif;
   background-color: #f8ebd0;
-  font-family: 'Luckiest Guy';
-  
 }
 
 .content {
@@ -18,4 +15,5 @@ html, body {
 router-outlet {
   flex: 1;
 }
+
 
