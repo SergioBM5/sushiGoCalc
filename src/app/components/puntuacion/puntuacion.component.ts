@@ -31,12 +31,33 @@ export class PuntuacionComponent implements OnInit {
       player.nigiriEggCount = 0;
       player.nigiriSalmonCount = 0;
       player.nigiriSquidCount = 0;
+      player.wasabiCount = 0;
       player.totalPuddings = 0;
       player.sashimiCount = 0;
       player.tempuraCount = 0;
       player.pointsRound1 = 0;
       player.pointsRound2 = 0;
       player.pointsRound3 = 0;
+      player.tempurapoints = 0;
+      player.nigiriEggpoints = 0;
+      player.nigiriSalmonpoints = 0;
+      player.nigirisquidpoints = 0;
+      player.sashimipoints = 0;
+      player.gyozaPoints = 0;
+      player.puddingPoints = 0;
+    });
+  }
+
+  nextRound(players: PlayerData[]): void {
+    players.forEach((player) => {
+      player.gyozaCount = 0;
+      player.makiCount = 0;
+      player.nigiriEggCount = 0;
+      player.nigiriSalmonCount = 0;
+      player.nigiriSquidCount = 0;
+      player.wasabiCount = 0 ;
+      player.sashimiCount = 0;
+      player.tempuraCount = 0;
       player.tempurapoints = 0;
       player.nigiriEggpoints = 0;
       player.nigiriSalmonpoints = 0;
@@ -100,29 +121,50 @@ export class PuntuacionComponent implements OnInit {
   }
 
   calcularPuntosNigiris(player: PlayerData, roundNumber: number): void {
-
-    let totalNigiriPoints;
-    player.nigirisquidpoints += player.nigiriSquidCount * 3;
-    player.nigiriSalmonpoints += player.nigiriSalmonCount * 2;
-    player.nigiriEggpoints += player.nigiriEggCount;
-
-    const wasabiSquid = (document.getElementById("wasabiSquid") as HTMLInputElement).checked;
-    const wasabiSalmon = (document.getElementById("wasabiSalmon") as HTMLInputElement).checked;
-    const wasabiEgg = (document.getElementById("wasabiEgg") as HTMLInputElement).checked;
-
-    if (wasabiSquid && player.nigiriSquidCount !== 0) {
-      player.nigirisquidpoints += 9; // Sumar 9 puntos adicionales por cada nigiri de calamar con wasabi
+    let totalNigiriPoints = 0;
+  
+    // Calcular puntos iniciales sin wasabi
+    let nigiriSquidPoints = 0;
+    let nigiriSalmonPoints = 0;
+    let nigiriEggPoints = 0;
+  
+    // Asignar wasabis a los nigiris de mayor valor
+    let remainingWasabiCount = player.wasabiCount;
+  
+    if(remainingWasabiCount > 0){
+    // Asignar wasabis a los nigiris de calamar
+    let squidNigirisWithWasabi = Math.min(remainingWasabiCount, player.nigiriSquidCount);
+    nigiriSquidPoints +=  squidNigirisWithWasabi * 9 + ((player.nigiriSquidCount - squidNigirisWithWasabi) *3); 
+    remainingWasabiCount -= squidNigirisWithWasabi;
+  }
+  else{
+    nigiriSquidPoints += player.nigiriSquidCount * 3
+  }
+  if(remainingWasabiCount > 0){
+    // Asignar wasabis a los nigiris de salmón
+    let salmonNigirisWithWasabi = Math.min(remainingWasabiCount, player.nigiriSalmonCount);
+    nigiriSalmonPoints += salmonNigirisWithWasabi * 6; + ((player.nigiriSalmonCount - salmonNigirisWithWasabi) * 2) 
+    remainingWasabiCount -= salmonNigirisWithWasabi;
+  }
+  else{
+    nigiriSalmonPoints += player.nigiriSalmonCount * 2
+  }
+    if(remainingWasabiCount > 0){
+    // Asignar wasabis a los nigiris de huevo
+    let eggNigirisWithWasabi = Math.min(remainingWasabiCount, player.nigiriEggCount);
+    nigiriEggPoints += eggNigirisWithWasabi * 3 + ((player.nigiriEggCount - eggNigirisWithWasabi)); 
+    remainingWasabiCount -= eggNigirisWithWasabi;
     }
-    if (wasabiSalmon && player.nigiriSalmonCount !== 0) {
-      player.nigiriSalmonpoints += 6; // Sumar 6 puntos adicionales por cada nigiri de salmón con wasabi
+    else{
+      nigiriEggPoints += player.nigiriEggCount * 1
     }
-    if (wasabiEgg && player.nigiriEggCount !== 0) {
-      player.nigiriEggpoints += 3; // Sumar 3 puntos adicionales por cada nigiri de huevo con wasabi
-    }
-
-    totalNigiriPoints = player.nigiriEggpoints + player.nigiriSalmonpoints + player.nigirisquidpoints;
+    // Calcular puntos totales de nigiris
+    totalNigiriPoints = nigiriSquidPoints + nigiriSalmonPoints + nigiriEggPoints;
+  
+    // Actualizar puntos de la ronda
     this.updateRoundPoints(player.index, roundNumber, totalNigiriPoints);
   }
+  
 
   calcularPuntosSashimis(player: PlayerData,roundNumber:number): void {
     const sashimiTrios = Math.floor(player.sashimiCount / 3);
@@ -209,12 +251,14 @@ export class PuntuacionComponent implements OnInit {
   showRoundSummary(): void {
     this.getRoundPointsForPlayer();
     this.getFinalPointsForPlayers();
+    this.nextRound(this.players);
     this.router.navigate(['/summary'], { state: { players: this.players, round: this.currentRound - 1 } });
   }
 
   finishGame(): void {
     this.getRoundPointsForPlayer();
     this.getFinalPointsForPlayers();
+    this.resetearPuntos(this.players);
     this.router.navigate(['/ranking'], { state: { players: this.players } });
     this.roundService.resetRound(); // Reinicia la ronda en el servicio
     this.currentRound = this.roundService.getCurrentRound(); // Actualiza la ronda actual desde el servicio

@@ -6,11 +6,11 @@
   <title>Tabla CSS</title>
 
 </head>
-<div class="row header">
+<div class="roundheader">
   <div class="blank">Ronda {{ currentRound }}</div>
 </div>
 <body>
-
+  <div class="container2">
 <div class="container">
   <div class="score-table">
  
@@ -27,16 +27,20 @@
       <div *ngFor="let player of players" class="cell"><input type="number" class="inputs" [(ngModel)]="player.tempuraCount"></div>
     </div>
     <div class="row">
-      <div class="cell">Nigiri🦑<input type="checkbox" id="wasabiSquid"></div>
+      <div class="cell">Nigiri 🦑</div>
       <div *ngFor="let player of players" class="cell"><input type="number" class="inputs" [(ngModel)]="player.nigiriSquidCount"></div>
     </div>
     <div class="row">
-      <div class="cell">Nigiri🐟<input type="checkbox" id="wasabiSalmon"></div>
+      <div class="cell">Nigiri 🐟</div>
       <div *ngFor="let player of players" class="cell"><input type="number" class="inputs" [(ngModel)]="player.nigiriSalmonCount"></div>
     </div>
     <div class="row">
-      <div class="cell">Nigiri🥚<input type="checkbox" id="wasabiEgg"></div>
+      <div class="cell">Nigiri 🥚</div>
       <div *ngFor="let player of players" class="cell"><input type="number" class="inputs" [(ngModel)]="player.nigiriEggCount"></div>
+    </div>
+    <div class="row">
+      <div class="cell">Wasabi</div>
+      <div *ngFor="let player of players" class="cell"><input type="number" class="inputs" [(ngModel)]="player.wasabiCount"></div>
     </div>
     <div class="row">
       <div class="cell">Sashimi</div>
@@ -65,6 +69,7 @@
       <p>¡Atención! Si usas algún wasabi, recuerda marcar la casilla para la correcta suma de tus puntos.</p>
     </div>
   </div>
+</div>
 </div>
 
 <footer class="footer">

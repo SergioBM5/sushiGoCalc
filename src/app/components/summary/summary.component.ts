@@ -37,12 +37,23 @@ export class RoundSummaryComponent implements OnInit {
     return 0;
   }
 
+  lastRound(players: PlayerData[]): void {
+    players.forEach((player) => {
+      if(this.currentRound == 1)
+      player.pointsRound1 = 0
+    else if (this.currentRound == 2)
+      player.pointsRound2 = 0
+    else player.pointsRound3 == 0
+    });
+  }
+
   goToNextRound(): void {
     this.roundService.incrementRound(); // Incrementar la ronda en el servicio
     this.router.navigateByUrl('/puntuacion');
   }
 
   goBack(): void {
+    this.lastRound(this.players)
     this.router.navigate(['/puntuacion']);
   }
 }

@@ -11,6 +11,7 @@ export interface PlayerData {
     nigiriSalmonpoints:number;
     nigiriEggCount: number;
     nigiriEggpoints:number;
+    wasabiCount:number;
     sashimiCount: number;
     sashimipoints: number;
     gyozaCount: number;
