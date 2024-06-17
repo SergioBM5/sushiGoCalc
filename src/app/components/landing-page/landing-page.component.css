@@ -1,23 +1,95 @@
+/* Estilos para el header */
+.header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: #373C27;
+  color: #fff;
+  text-align: center;
+  padding: 10px 0;
+  z-index: 1000;
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.header-logo {
+  width: 50px;
+}
+.navigation{
+  flex-grow: 1;
+  display: flex;
+  justify-content: center; /* Centra la barra de navegación */
+}
+
+.navigation ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  padding: 0;
+  margin: 0;
+}
+
+.navigation ul li a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: bold;
+}
+
+.auth-buttons button {
+  margin: 0 10px;
+  padding: 5px 15px;
+  background-color: #D2D2A4;
+  color: #000;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.auth-buttons button:hover {
+  background-color: #FCF3CF;
+}
+
+/* Estilos existentes */
 .landing-page {
+  position: relative;
   background-color: #f8ebd0;
+  background-size: 700px;
   background-image: url('makisu.png');
   background-position: center;
   background-repeat: no-repeat;
-  height: 93vh; /* Asegura que ocupe toda la altura de la ventana */
+  top: 70px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding-top: 80px; /* Para evitar que el contenido se superponga con el header */
 }
 
 .landing-page h1 {
   color: floralwhite;
 }
 
+.download-container {
+  display: flex;
+  align-items: center;
+}
+
+.download-button {
+  width: 150px;
+  margin: 10px;
+}
+
 .landing-page .landing-container {
-  height: 450px;  
+  height: 350px;
   width: 450px;
-  margin: 22.7vh auto; /* Cambio para centrar horizontalmente */
+  margin: 0vh auto;
   background-color: #373C27;
   text-align: center;
   display: flex;
@@ -36,7 +108,7 @@
 }
 
 .landing-page .button-container {
-  margin-top: 20px; /* Separación entre botones y el contenido */
+  margin-top: 20px;
 }
 
 .landing-page button {
@@ -56,19 +128,31 @@
   background-color: #FCF3CF;
 }
 
-.landing-page .footer {
+.footer {
   position: fixed;
   bottom: 0;
   width: 100%;
-  background-color: grey;
+  background-color: #373C27;
   color: #fff;
   text-align: center;
   text-decoration: underline;
 }
 
-
 /* Media queries para responsive design */
 @media (max-width: 768px) {
+  .header-content {
+    flex-direction: column;
+  }
+
+  .navigation ul {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .auth-buttons {
+    margin-top: 10px;
+  }
+
   .landing-page .landing-container {
     width: auto;
     height: auto;
@@ -76,7 +160,6 @@
     padding: 20px;
   }
 
-  
   .landing-page {
     width: auto;
     height: 80vh;
@@ -105,6 +188,19 @@
 }
 
 @media (max-width: 480px) {
+  .header-content {
+    flex-direction: column;
+  }
+
+  .navigation ul {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .auth-buttons {
+    margin-top: 10px;
+  }
+
   .landing-page .landing-container {
     width: auto;
     height: auto;
