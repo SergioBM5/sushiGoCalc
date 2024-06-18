@@ -1,0 +1,33 @@
+.profile-page {
+    padding: 20px;
+    background-color: #f8ebd0;
+    font-family: sans-serif;
+  }
+  
+  .profile-info, .profile-stats, .best-plays {
+    margin: 20px 0;
+  }
+  
+  .profile-stats table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .profile-stats th, .profile-stats td {
+    border: 1px solid #373C27;
+    padding: 8px;
+    text-align: left;
+  }
+  
+  .best-plays ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .best-plays li {
+    background-color: #D2D2A4;
+    margin: 5px 0;
+    padding: 10px;
+    border-radius: 5px;
+  }
+  

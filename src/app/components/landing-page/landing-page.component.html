@@ -6,6 +6,7 @@
       <div class="auth-buttons">
       <button routerLink="/register" routerLinkActive="active">Registro</button>
       <button routerLink="/login" routerLinkActive="active">Iniciar Sesión</button>
+      <button routerLink="/profile" routerLinkActive="active" *ngIf="isLoggedIn">Perfil</button>
     </div>
   </div>
 </header>

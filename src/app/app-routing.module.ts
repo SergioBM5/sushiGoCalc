@@ -8,6 +8,8 @@ import { RoundSummaryComponent } from './components/summary/summary.component';
 import { InstruccionesComponent } from './components/instrucciones/instrucciones.component';
 import { LoginComponent } from './components/auth/login/login.component';
 import { RegisterComponent } from './components/auth/register/register.component';
+import { ProfileComponent } from './components/user/profile/profile.component';
+import { AuthGuardService } from './services/auth-guard.service';
 
 
 
@@ -21,7 +23,7 @@ const routes: Routes = [
   { path: 'instrucciones', component: InstruccionesComponent,data: {animation: 'instruccionesPage' }},
   { path: 'register', component: RegisterComponent },
   { path: 'login', component: LoginComponent },
-
+  { path: 'profile', component: ProfileComponent, canActivate: [AuthGuardService]},
   // Otras rutas de la aplicación...
 ];
 
