@@ -6,5 +6,14 @@ import { Component } from '@angular/core';
   styleUrl: './landing-page.component.css'
 })
 export class LandingPageComponent {
+  isMenuOpen: boolean = false;
 
+  constructor() { }
+
+  ngOnInit(): void {
+  }
+
+  toggleMenu() {
+    this.isMenuOpen = !this.isMenuOpen;
+  }
 }

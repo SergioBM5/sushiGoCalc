@@ -31,7 +31,7 @@ table {
   }
 
   .landing-container {
-    background-color: bisque;
+    background-color: #f8ebd0;
     width: 100%;
     height: 98vh; /* Cambiado a 100vh para ocupar toda la pantalla vertical */
     display: flex;
@@ -45,7 +45,7 @@ table {
 
 
   .container {
-    background-color: floralwhite;
+    background-color: bisque;
     border: 3px solid black; /* Borde negro de 2px */
     padding: 20px; /* Espacio interno para separar el contenido del borde */
     max-width: 400px; /* Ancho máximo deseado */
@@ -99,10 +99,12 @@ table {
   .buttons {
     margin: 50px auto;
    }
+
    .footer {
-    position: absolute;
+    bottom:0;
+    position: fixed;
     width: 100%;
-    background-color: grey;
+    background-color: #373C27;
     color: #fff;
     text-align: center;
     text-decoration: underline;

@@ -6,6 +6,8 @@ import { RankingComponent } from './components/ranking/ranking.component';
 import { PlayerConfigComponent } from './components/players/player-config/player-config.component';
 import { RoundSummaryComponent } from './components/summary/summary.component';
 import { InstruccionesComponent } from './components/instrucciones/instrucciones.component';
+import { LoginComponent } from './components/auth/login/login.component';
+import { RegisterComponent } from './components/auth/register/register.component';
 
 
 
@@ -17,6 +19,8 @@ const routes: Routes = [
   { path: 'ranking', component: RankingComponent, data: {animation: 'RankingPage' }},
   { path: 'summary', component: RoundSummaryComponent, data: {animation: 'RoundSummaryPage'}},
   { path: 'instrucciones', component: InstruccionesComponent,data: {animation: 'instruccionesPage' }},
+  { path: 'register', component: RegisterComponent },
+  { path: 'login', component: LoginComponent },
 
   // Otras rutas de la aplicación...
 ];

@@ -1,3 +1,13 @@
+.cuerpo{
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+  align-content: center;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  align-items: stretch;
+} 
+
 .container2 {
  display: flex;
  justify-content: center;
@@ -119,9 +129,10 @@
   margin: 0;
 }
 .footer {
-  position: absolute;
+  position: fixed;
+  bottom: 0;
   width: 100%;
-  background-color: grey;
+  background-color: #373C27;
   color: #fff;
   text-align: center;
   text-decoration: underline;

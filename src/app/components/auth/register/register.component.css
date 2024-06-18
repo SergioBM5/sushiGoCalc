@@ -1,0 +1,69 @@
+/* register.component.css */
+.landing-page {
+  position: relative;
+  background-color: #f8ebd0;
+  background-size: 700px;
+  background-image: url('makisu.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  top: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 80px; /* Para evitar que el contenido se superponga con el header */
+}
+
+/* Estilos para el formulario de registro */
+.auth-form {
+    width: 300px;
+    margin: 0 auto;
+    background-color: #373C27;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 10px 10px 4px rgba(0, 0, 0, 0.1);
+    font-family: 'Luckiest Guy';
+    color: white;
+    text-align: center;
+  }
+  
+  .auth-form label {
+    display: block;
+    margin-bottom: 10px;
+    color: white;
+    text-align: center;
+  }
+  
+  .auth-form input[type="text"],
+  .auth-form input[type="email"],
+  .auth-form input[type="password"] {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .auth-form button[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    background-color: #D2D2A4;
+    color: #000;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .auth-form button[type="submit"]:hover {
+    background-color: #FCF3CF;
+  }
+
+  .footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #373C27;
+    color: #fff;
+    text-align: center;
+    text-decoration: underline;
+    }
