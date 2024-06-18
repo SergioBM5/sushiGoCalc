@@ -1,0 +1,1 @@
+html,body{height:100%;margin:0;font-family:sans-serif;background-color:#f8ebd0}.content{display:flex;flex-direction:column;justify-content:center;align-items:center;height:100%}router-outlet{width:100%;max-width:1200px;flex:1;padding:20px}@media (max-width: 1200px){.content{padding:0 20px}}@media (max-width: 768px){.content{padding:0 10px}router-outlet{padding:10px}}

@@ -1,11 +1,44 @@
-.cuerpo{
-    height: 100vh;
-} 
+/* Estilos generales */
+.cuerpo {
+  height: 100vh;
+}
+
+.landing-page {
+  height: 100%;
+  background-color: #f8ebd0;
+  background-image: url(/assets/makisu.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.landing-page h1 {
+  color: floralwhite;
+}
+
+.landing-page button {
+  font-family: "Luckiest Guy", cursive;
+  margin: 10px 10px 10px 10px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: #D2D2A4;
+  color: #000;
+  border: none;
+  border-radius: 10px;
+}
+
+.landing-page button:hover {
+  background-color: #FCF3CF;
+}
+
 .landing-page .header {
   position: fixed;
   top: 0;
   width: 100%;
-  background-color: #373C27;
+  background-color: #373c27;
   color: #fff;
   text-align: center;
   z-index: 10000;
@@ -21,89 +54,11 @@
   width: 50px;
 }
 
-.landing-page .navigation {
-  flex-grow: 1;
-  display: flex;
-  justify-content: center; /* Centra la barra de navegación */
-}
-
-.landing-page .navigation ul {
-  list-style: none;
-  display: flex;
-  gap: 20px;
-  padding: 0;
-  margin: 0;
-}
-
-.landing-page .navigation ul li a {
-  text-decoration: none;
-  color: #fff;
-  font-weight: bold;
-}
-
-.auth-buttons button {
-  margin: 0 10px;
-  padding: 5px 15px;
-  background-color: #D2D2A4;
-  color: #000;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-.button-container .button{
-   font-family: "Luckiest Guy", cursive;
-    margin: 10px auto;
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
-    background-color: #D2D2A4;
-    color: #000;
-    border: none;
-    border-radius: 10px;
-}
-/* Añade margen a la izquierda del botón de inicio de sesión */
-.auth-buttons button:last-child {
-  margin-left: 10px;
-}
-
-.auth-buttons button:hover {
-  background-color: #FCF3CF;
-}
-
-/* Estilos existentes */
-.landing-page {
-  height: 100%;
-
-  background-color: #f8ebd0;
-  background-image: url(./makisu.png);
-  background-position: center;
-  background-repeat: no-repeat;
-  display: flex;
-  justify-content: center;
-
-  flex-direction: column;
-
-}
-
-.landing-page h1 {
-  color: floralwhite;
-}
-
-.download-container {
-  display: flex;
-  align-items: center;
-}
-
-.download-button {
-  width: 150px;
-  margin: 10px;
-}
-
 .landing-page .landing-container {
   height: 350px;
   width: 450px;
-  margin: 0vh auto;
-  background-color: #373C27;
+  margin: 0 auto;
+  background-color: #373c27;
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -120,153 +75,28 @@
   display: block;
 }
 
-.landing-page .button-container {
-  margin-top: 20px;
+.download-container {
+  display: flex;
+  align-items: center;
 }
 
-.landing-page button {
-  font-family: 'Luckiest Guy', cursive;
-  margin: 10px 10px 10px 10px;
-  padding: 10px 20px;
-  font-size: 16px;
-  cursor: pointer;
-  background-color: #D2D2A4;
-  color: #000;
-  border: none;
-  border-radius: 10px;
-}
-
-.landing-page button:hover {
-  background-color: #FCF3CF;
+.download-button {
+  width: 150px;
+  margin: 10px;
 }
 
 .footer {
   position: fixed;
   bottom: 0;
   width: 100%;
-  background-color: #373C27;
+  background-color: #373c27;
   color: #fff;
   text-align: center;
   text-decoration: underline;
 }
 
-.burger-menu {
-  display: none; /* Ocultamos el menú hamburguesa por defecto en pantallas grandes */
-  cursor: pointer;
-}
-
-.burger-bar {
-  width: 30px;
-  height: 3px;
-  background-color: #fff;
-  margin: 4px 0;
-  transition: 0.4s;
-}
-
-.navigation-mobile{
-  display: none;
-}
-
-.navigation ul.show {
-  display: flex !important; /* Forzamos a mostrar el menú en pantallas pequeñas */
-  flex-direction: column;
-  position: absolute;
-  top: 70px; /* Altura del header */
-  left: 0;
-  width: 100%;
-  background-color: #373C27;
-  z-index: 999;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.3s ease-in-out;
-}
-
-.navigation ul.show li {
-  margin: 10px 0;
-}
-
-.navigation ul.show li a {
-  padding: 10px 20px;
-}
-
-.navigation ul.show li a:hover {
-  background-color: #D2D2A4;
-  color: #000;
-}
-
-.navigation ul.show li:last-child {
-  margin-bottom: 20px;
-}
-
-.navigation ul.show li:last-child a {
-  padding: 15px 20px;
-}
-
-.navigation ul.show.show-menu {
-  opacity: 1;
-  pointer-events: auto;
-}
-
-
 /* Media queries para responsive design */
 @media (max-width: 768px) {
-
-  .navigation ul {
-    display: none !important;
-  }
-  
-  .burger-menu {
-    display: block; /* Mostramos el menú hamburguesa en pantallas pequeñas */
-  }
-
-  .header-content {
-    display: none; /* Ocultamos la navegación principal en pantallas pequeñas */
-  }
-
-  .navigation-mobile {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .navigation-mobile ul {
-    display: none; /* Ocultamos la navegación móvil por defecto */
-    width: 100%;
-    background-color: #373C27;
-    padding: 10px 0;
-    margin: 0;
-  }
-
-  .navigation-mobile ul.show {
-    display: flex; /* Mostramos la navegación móvil cuando se abre el menú */
-  }
-
-  .navigation-mobile ul li {
-    margin: 10px 0;
-    text-align: center;
-  }
-
-  .navigation-mobile ul li a {
-    text-decoration: none;
-    color: #fff;
-    font-weight: bold;
-    padding: 10px;
-    display: block;
-  }
-
-  .navigation-mobile ul li a:hover {
-    background-color: #D2D2A4;
-    color: #000;
-    border-radius: 5px;
-  }
-
-  .auth-buttons {
-    margin-top: 10px;
-  }
-  .auth-buttons button{
-    margin: 10px;
-  }
-
   .landing-page .landing-container {
     width: auto;
     height: auto;
@@ -302,22 +132,7 @@
 }
 
 @media (max-width: 480px) {
-
-  .navigation ul {
-    display: none !important;
-  }
-
-  .auth-buttons {
-    margin-top: 10px;
-  }
-
-  .landing-page .landing-container {
-    width: auto;
-    height: auto;
-    margin: 5vh auto;
-    padding: 10px;
-  }
-
+  .landing-page .landing-container,
   .landing-page {
     width: auto;
     height: 80vh;
