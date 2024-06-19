@@ -35,17 +35,23 @@
     border: 1px solid #ddd;
   }
 
-  .table{
+  .table-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 90vh; /* Asegura que el contenedor ocupe toda la altura de la ventana */
+  }
+  
+  .table {
     border: 2px solid black;
     max-width: fit-content;
-    margin: 12vh auto;
+    margin: 12vh auto; /* Puedes ajustar o remover esto si es necesario */
     padding: 20px;
     border-radius: 8px;
     box-shadow: 10px 10px 4px rgba(0, 0, 0, 0.1);
     background-color: bisque;
     overflow: auto; /* Contenedor clearfix */
   }
-  
   .score-table th {
     background-color: #f2f2f2;
   }

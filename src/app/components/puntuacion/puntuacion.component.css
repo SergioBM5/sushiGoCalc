@@ -1,7 +1,7 @@
 .cuerpo{
   display: flex;
   justify-content: center;
-  height: 100vh;
+  height: 90vh;
   align-content: center;
   flex-wrap: nowrap;
   flex-direction: column;
@@ -31,6 +31,7 @@
   display: flex;
 }
 .roundheader{
+  margin-top: 25px;
   display: flex;
   justify-content: center;
 }
@@ -138,3 +139,137 @@
   text-decoration: underline;
   }
   
+  /* Media queries para dispositivos móviles */
+@media only screen and (max-width: 600px) {
+  .cuerpo {
+    height: auto;
+  }
+
+  .container2 {
+    flex-direction: column;
+    padding: 10px;
+  }
+
+  .container {
+    margin: 0;
+    padding: 10px;
+    box-shadow: none;
+  }
+
+  .score-table .cell {
+    font-size: 10px;
+    padding: 5px;
+  }
+
+  .buttons button {
+    font-size: 14px;
+    padding: 8px 16px;
+    margin: 5px 0;
+  }
+
+  .warning {
+    flex-direction: column;
+    padding: 10px;
+  }
+
+  .warning-icon {
+    width: 35px;
+    margin-bottom: 10px;
+  }
+
+  .warning-text {
+    font-size: 14px;
+  }
+
+  .blank {
+    font-size: 12px;
+    padding: 5px;
+    margin: 20px 5px 0px;
+  }
+}
+
+/* Media queries para tablets */
+@media only screen and (min-width: 601px) and (max-width: 1024px) {
+
+  .cuerpo {
+    height: auto;
+  }
+
+  .container2 {
+    display: flex;
+        flex-direction: column;
+        padding: 20px;
+        justify-content: center;
+  }
+
+  .container {
+    margin: 5px 5px;
+    padding: 10px;
+  }
+
+  .score-table .cell {
+    font-size: 12px;
+    padding: 6px;
+  }
+
+  .buttons button {
+    font-size: 15px;
+    padding: 9px 18px;
+  }
+
+  .blank {
+    font-size: 13px;
+    padding: 7px;
+    margin: 30px 10px 0px;
+  }
+}
+/* Media queries para dispositivos móviles pequeños */
+@media only screen and (max-width: 375px) {
+  .cuerpo {
+    height: auto;
+  }
+
+  .container2 {
+    flex-direction: column;
+    padding: 5px;
+  }
+
+  .container {
+    margin: 0;
+    padding: 5px;
+    box-shadow: none;
+  }
+
+  .score-table .cell {
+    font-size: 9px;
+    padding: 4px;
+  }
+
+  .buttons button {
+    font-size: 12px;
+    padding: 6px 12px;
+    margin: 5px 0;
+  }
+
+  .warning {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 8px;
+  }
+
+  .warning-icon {
+    width: 30px;
+    margin-bottom: 8px;
+  }
+
+  .warning-text {
+    font-size: 12px;
+  }
+
+  .blank {
+    font-size: 11px;
+    padding: 4px;
+    margin: 15px 5px 0px;
+  }
+}
+

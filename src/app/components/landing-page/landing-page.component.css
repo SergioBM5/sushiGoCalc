@@ -1,6 +1,6 @@
 /* Estilos generales */
 .cuerpo {
-  height: 100vh;
+  height: 90vh;
 }
 
 .landing-page {
@@ -108,7 +108,6 @@
     width: auto;
     height: 80vh;
     margin: 5vh auto;
-    padding: 10px;
   }
 
   .landing-page h1 {
@@ -136,7 +135,6 @@
   .landing-page {
     width: auto;
     margin: 5vh auto;
-    padding: 10px;
   }
 
   .landing-page h1 {
