@@ -258,7 +258,6 @@ export class PuntuacionComponent implements OnInit {
   finishGame(): void {
     this.getRoundPointsForPlayer();
     this.getFinalPointsForPlayers();
-    this.resetearPuntos(this.players);
     this.router.navigate(['/ranking'], { state: { players: this.players } });
     this.roundService.resetRound(); // Reinicia la ronda en el servicio
     this.currentRound = this.roundService.getCurrentRound(); // Actualiza la ronda actual desde el servicio
