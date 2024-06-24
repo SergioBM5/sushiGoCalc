@@ -1,66 +1,58 @@
 <div class="instrucciones">
-    <div class="landing-container-out">
-      <div class= "header">
-        <button class="button-back" (click)="home()">Volver</button>
-        <h1>¿Como jugar?</h1>
-      </div>
+  <div class="landing-container-out">
+    <div class="header">
+      <button class="button-back" (click)="home()">{{ 'RETURN_HOME_BUTTON' | translate }}</button>
+      <h1>{{ 'HOW_TO_PLAY_TITLE' | translate }}</h1>
+    </div>
+
     <div class="landing-container-in">
-    <h2>Objetivo del juego</h2>
-    <p>
-      En Sushi Go!, tu objetivo es ganar la mayor cantidad de puntos posible seleccionando las mejores combinaciones de platos de sushi.
-    </p>
+      <h2>{{ 'OBJECTIVE_TITLE' | translate }}</h2>
+      <p>
+        {{ 'OBJECTIVE_DESCRIPTION' | translate }}
+      </p>
     </div>  
+
     <div class="landing-container-in">
-    <h2>Preparación</h2>
-    <ol>
-      <li>Baraja el mazo de cartas de Sushi Go!</li>
-      <li>Reparte un número de cartas a cada jugador según el número de jugadores:
-        <ul>
-          <li>2 jugadores: 10 cartas cada uno</li>
-          <li>3 jugadores: 9 cartas cada uno</li>
-          <li>4 jugadores: 8 cartas cada uno</li>
-          <li>5 jugadores: 7 cartas cada uno</li>
-        </ul>
-      </li>
-      <li>Coloca las cartas restantes a un lado para futuras rondas.</li>
-    </ol>
-</div>
-<div class="landing-container-in">
-    <h2>Cómo jugar</h2>
-    <ol>
-      <li>Cada jugador elige una carta de su mano y la coloca boca abajo frente a ellos.</li>
-      <li>Cuando todos los jugadores han elegido su carta, las revelan simultáneamente.</li>
-      <li>Luego, pasa el resto de sus cartas a la izquierda.</li>
-      <li>Repite estos pasos hasta que todas las cartas hayan sido jugadas.</li>
-    </ol>
-</div>
-<div class="landing-container-in">
-    <h2>Puntuación</h2>
-    <p>
-      Después de que todas las cartas han sido jugadas, se cuentan los puntos según las combinaciones de cartas que cada jugador haya coleccionado. Las reglas de puntuación son las siguientes:
-    </p>
-    <ul>
-      <li><strong>Maki Rolls:</strong> El jugador con más símbolos de Maki Rolls gana 6 puntos, el segundo lugar gana 3 puntos. En caso de empate se dividen a la mitad los puntos a repartir</li>
-      <li><strong>Tempura:</strong> Dos Tempuras valen 5 puntos.</li>
-      <li><strong>Sashimi:</strong> Tres Sashimis valen 10 puntos.</li>
-      <li><strong>Dumplings:</strong> Los puntos aumentan exponencialmente a medida que coleccionas más Dumplings.</li>
-      <li><strong>Nigiri:</strong> Los puntos se distribuyen de la siguiente manera:
-        <ul><strong>Calamar:</strong> El nigiri de calamar vale 3 puntos.</ul>
-        <ul><strong>Salmon:</strong> El nigiri de salmon vale 2 puntos.</ul>
-        <ul><strong>Huevo:</strong> El nigiri de huevo vale 1 punto.</ul>
-    </li>
-    <li><strong>Wasabi:</strong> Triplica el valor del siguiente nigiri que coloques encima de el</li>
-    <li><strong>Palillos:</strong> En el siguiente turno echas dos cartas</li>
-    <li><strong>Pudding:</strong> El jugador con más símbolos de Pudding al final de la partida gana 6 puntos, el que tenga menos lugar pierde 6 puntos. En caso de empate se dividen a la mitad los puntos a repartir</li>
-    
-    </ul>
-</div>
-<div class="landing-container-in">
-    <h2>Fin del juego</h2>
-    <p>
-      El juego termina después de tres rondas. El jugador con la mayor cantidad de puntos al final de las tres rondas es el ganador.
-    </p>
-</div>
-</div>
+      <h2>{{ 'PREPARATION_TITLE' | translate }}</h2>
+      <ol>
+        <li>{{ 'PREPARATION_STEP_1' | translate }}</li>
+        <li>{{ 'PREPARATION_STEP_2' | translate }}</li>
+        <li>{{ 'PREPARATION_STEP_3' | translate }}</li>
+      </ol>
+    </div>
+
+    <div class="landing-container-in">
+      <h2>{{ 'GAMEPLAY_TITLE' | translate }}</h2>
+      <ol>
+        <li>{{ 'GAMEPLAY_STEP_1' | translate }}</li>
+        <li>{{ 'GAMEPLAY_STEP_2' | translate }}</li>
+        <li>{{ 'GAMEPLAY_STEP_3' | translate }}</li>
+        <li>{{ 'GAMEPLAY_STEP_4' | translate }}</li>
+      </ol>
+    </div>
+
+    <div class="landing-container-in">
+      <h2>{{ 'SCORING_TITLE' | translate }}</h2>
+      <p>
+        {{ 'SCORING_DESCRIPTION' | translate }}
+      </p>
+      <ul>
+        <li><strong>{{ 'MAKI_ROLLS' | translate }}:</strong> {{ 'MAKI_ROLLS_DESCRIPTION' | translate }}</li>
+        <li><strong>{{ 'TEMPURA' | translate }}:</strong> {{ 'TEMPURA_DESCRIPTION' | translate }}</li>
+        <li><strong>{{ 'SASHIMI' | translate }}:</strong> {{ 'SASHIMI_DESCRIPTION' | translate }}</li>
+        <li><strong>{{ 'DUMPLINGS' | translate }}:</strong> {{ 'DUMPLINGS_DESCRIPTION' | translate }}</li>
+        <li><strong>{{ 'NIGIRI' | translate }}:</strong> {{ 'NIGIRI_DESCRIPTION' | translate }}</li>
+        <li><strong>{{ 'WASABI' | translate }}:</strong> {{ 'WASABI_DESCRIPTION' | translate }}</li>
+        <li><strong>{{ 'CHOPSTICKS' | translate }}:</strong> {{ 'CHOPSTICKS_DESCRIPTION' | translate }}</li>
+        <li><strong>{{ 'PUDDING' | translate }}:</strong> {{ 'PUDDING_DESCRIPTION' | translate }}</li>
+      </ul>
+    </div>
+
+    <div class="landing-container-in">
+      <h2>{{ 'END_OF_GAME_TITLE' | translate }}</h2>
+      <p>
+        {{ 'END_OF_GAME_DESCRIPTION' | translate }}
+      </p>
+    </div>
   </div>
-  
+</div>

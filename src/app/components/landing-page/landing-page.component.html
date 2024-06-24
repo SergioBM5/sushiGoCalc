@@ -1,14 +1,14 @@
 <div class="cuerpo">
-<div class="landing-page">
-  <div class="landing-container">
-    <img src="assets/Logo.png" class="game-logo">
-    <h1>¡Bienvenido a SushiGoCalc!</h1>
-    <div class="button-container">
-      <button class="button" routerLink="/player-config" routerLinkActive="active">Comenzar Partida</button> 
-      <button routerLink="/instrucciones" routerLinkActive="active">Como Jugar</button>
+  <div class="landing-page">
+    <div class="landing-container">
+      <img src="assets/logo.png" class="game-logo">
+      <h1>{{ 'WELCOME_MESSAGE' | translate }}</h1>
+      <div class="button-container">
+        <button class="button" routerLink="/player-config" routerLinkActive="active">{{ 'START_GAME' | translate }}</button> 
+        <button routerLink="/instrucciones" routerLinkActive="active">{{ 'HOW_TO_PLAY' | translate }}</button>
+      </div>
     </div>
-  </div>
-  <div class="makisu">
+    <div class="makisu">
     <!-- <div class="download-container">
       <a href="https://play.google.com/store/apps/details?id=tu.app.id" target="_blank">
         <img src="assets/play-store-badge.png" alt="Descargar en Google Play" class="download-button">
@@ -20,7 +20,7 @@
   </div>
   <footer class="footer">
     <div class="footer-content">
-      <p>&copy; 2024 SushiGoCalc. Todos los derechos reservados.</p>
+      <p>&copy;{{ 'COPYRIGHT' | translate }}</p>
     </div>
   </footer>
 </div>

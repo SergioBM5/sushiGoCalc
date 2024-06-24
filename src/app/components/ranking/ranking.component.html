@@ -1,20 +1,20 @@
 <div class = "landing-container">
 <div class="container" *ngIf="players.length<2">
 
-  <p>No hay jugadores inscritos</p>
+  <p>{{ 'NO_PLAYERS_MESSAGE' | translate }}</p>
   <div class=" buttons">
-  <button (click)="home()">Volver a inicio</button>
+  <button (click)="home()">{{ 'RETURN_HOME_BUTTON' | translate }}</button>
   </div>
 </div>
   
 <div class="container" *ngIf="players.length>=2">
-<h1>Ranking de Jugadores</h1>
+<h1>{{ 'PLAYER_RANKING_TITLE' | translate }}</h1>
 <table>
   <thead>
     <tr>
-      <th>Posición</th>
-      <th>Nombre</th>
-      <th>Puntos</th>
+      <th>{{ 'POSITION' | translate }}</th>
+      <th>{{ 'NAME' | translate }}</th>
+      <th>{{ 'POINTS' | translate }}</th>
     </tr>
   </thead>
   <tbody>
@@ -39,10 +39,10 @@
   </tbody>
 </table>
 </div>
-<button *ngIf="players.length>=2" class="new-game" routerLinkActive="active" (click)="newGame()">Nueva Partida</button> 
+<button *ngIf="players.length>=2" class="new-game" routerLinkActive="active" (click)="newGame()">{{ 'NEW_GAME_BUTTON' | translate }}</button> 
 </div>
 <footer class="footer">
   <div class="footer-content">
-    <p>&copy; 2024 SushiGoCalc. Todos los derechos reservados.</p>
+    <p>&copy; {{ 'COPYRIGHT' | translate }}</p>
   </div>
 </footer>

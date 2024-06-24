@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { PlayerConfigService } from '../../../services/PlayersService';
 import { PlayerData } from '../../../services/playerDataModel';
+import { TranslateService } from '@ngx-translate/core';
 @Component({
   selector: 'app-player-config',
   templateUrl: './player-config.component.html',
@@ -9,7 +10,11 @@ import { PlayerData } from '../../../services/playerDataModel';
 })
 export class PlayerConfigComponent {
 
-  constructor(private router: Router, private playerConfigService: PlayerConfigService) {}
+  constructor(private router: Router, private playerConfigService: PlayerConfigService, private translate: TranslateService) {}
+  
+  switchLanguage(language: string) {
+    this.translate.use(language);
+  }
 
   players: PlayerData[] = [{
     index: 0,
@@ -114,10 +119,11 @@ export class PlayerConfigComponent {
   }
 
   play():void{
+    const alertMessage = this.translate.instant('ALERT_MISSING_PLAYERS');
+    const alertMessageNames = this.translate.instant('ALERT_MISSING_PLAYERS_NAMES');
     switch(this.players.length) {
-
     case 1:
-      throw alert('Debe introducir al menos dos jugadores');
+      throw alert(alertMessage);
     default:
       this.players.forEach(player => {
         if(player.playerName != "")
@@ -128,7 +134,8 @@ export class PlayerConfigComponent {
       if(this.startGame) {
            this.router.navigateByUrl('/puntuacion');
           }
-    else throw alert('Debe introducir todos los nombres de los jugadores');
+    else{ 
+    alert(alertMessageNames);}
+    }
 }
-  }
 }

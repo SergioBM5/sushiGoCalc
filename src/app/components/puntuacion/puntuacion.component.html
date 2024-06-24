@@ -1,11 +1,6 @@
-
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tabla CSS</title>
-
 <div class="cuerpo">
 <div class="roundheader">
-  <div class="blank">Ronda {{ currentRound }}</div>
+  <div class="blank">{{ 'ROUND' | translate }} {{ currentRound }}</div>
 </div>
 <div class="container2">
 <div class="container">
@@ -54,8 +49,8 @@
   </div>
 
   <div class="buttons">
-    <button *ngIf="currentRound < 3" (click)="showRoundSummary()">Siguiente Ronda</button>
-    <button *ngIf="currentRound === 3" (click)="finishGame()">Finalizar Partida</button>
+    <button *ngIf="currentRound < 3" (click)="showRoundSummary()">{{ 'NEXT_ROUND' | translate }}</button>
+    <button *ngIf="currentRound === 3" (click)="finishGame()">{{ 'FINISH_GAME' | translate }}</button>
   </div>
 
   <div class="warning">
@@ -63,7 +58,7 @@
       <img src="assets/icono_warning.png" alt="Warning Icon">
     </div>
     <div class="warning-text">
-      <p>¡Atención! Si usas algún wasabi, recuerda marcar la casilla para la correcta suma de tus puntos.</p>
+      <p>{{ 'WARNING_MESSAGE' | translate }}</p>
     </div>
   </div>
 </div>
@@ -71,7 +66,8 @@
 
 <footer class="footer">
   <div class="footer-content">
-    <p>&copy; 2024 SushiGoCalc. Todos los derechos reservados.</p>
+    <p>&copy;{{ 'COPYRIGHT' | translate }};
+    </p>
   </div>
 </footer>
 

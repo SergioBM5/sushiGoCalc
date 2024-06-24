@@ -1,0 +1,70 @@
+{
+
+  "WELCOME_MESSAGE": "Welcome to SushiGoCalc!",
+  "START_GAME": "Start Game",
+  "HOW_TO_PLAY": "How to Play",
+  "COPYRIGHT": "2024 SushiGoCalc. All rights reserved.",
+ 
+
+  "HEADER": "Players",
+  "DELETE_PLAYER": "Delete Player",
+  "ADD_PLAYER": "Add Player",
+  "ALERT_MISSING_PLAYERS_NAMES": "Please, enter all players' names.",
+  "ALERT_MISSING_PLAYERS": "Please, enter at least two players.",
+
+  "WARNING_MESSAGE": "Attention! If you use any wasabi, remember to fill in the amount used regardless of which nigiri you placed it on.",
+  "NEXT_ROUND": "Next Round",
+  "FINISH_GAME": "Finish Game",
+  "ROUND": "Round",
+
+  "ROUND_SUMMARY_TITLE": "Round Summary",
+  "PLAYER": "Player",
+  "POINTS": "Points",
+  "TOTAL_POINTS": "Total Points",
+  "NEXT_ROUND_BUTTON": "Next Round",
+  "BACK_BUTTON": "Back",
+
+  "NO_PLAYERS_MESSAGE": "No players registered",
+  "RETURN_HOME_BUTTON": "Return to Home",
+  "PLAYER_RANKING_TITLE": "Players Ranking",
+  "POSITION": "Position",
+  "NAME": "Name",
+  "NEW_GAME_BUTTON": "New Game",
+
+  "HOW_TO_PLAY_TITLE": "How to Play?",
+  "OBJECTIVE_TITLE": "Objective of the Game",
+  "OBJECTIVE_DESCRIPTION": "In Sushi Go!, your objective is to earn the highest number of points by selecting the best combinations of sushi dishes.",
+  "PREPARATION_TITLE": "Preparation",
+  "PREPARATION_STEP_1": "Shuffle the Sushi Go! deck.",
+  "PREPARATION_STEP_2": "Deal a number of cards to each player according to the number of players:",
+  "PREPARATION_STEP_3": "Place the remaining cards aside for future rounds.",
+  "GAMEPLAY_TITLE": "Gameplay",
+  "GAMEPLAY_STEP_1": "Each player selects a card from their hand and places it face down in front of them.",
+  "GAMEPLAY_STEP_2": "Once all players have chosen their card, reveal them simultaneously.",
+  "GAMEPLAY_STEP_3": "Then, pass the rest of your cards to the left.",
+  "GAMEPLAY_STEP_4": "Repeat these steps until all cards have been played.",
+  "SCORING_TITLE": "Scoring",
+  "SCORING_DESCRIPTION": "After all cards have been played, points are counted based on the combinations of cards each player has collected. The scoring rules are as follows:",
+  "MAKI_ROLLS": "Maki Rolls",
+  "MAKI_ROLLS_DESCRIPTION": "The player with the most Maki Roll symbols earns 6 points, the second place earns 3 points. In case of a tie, points are divided equally.",
+  "TEMPURA": "Tempura",
+  "TEMPURA_DESCRIPTION": "Two Tempuras are worth 5 points.",
+  "SASHIMI": "Sashimi",
+  "SASHIMI_DESCRIPTION": "Three Sashimis are worth 10 points.",
+  "DUMPLINGS": "Dumplings",
+  "DUMPLINGS_DESCRIPTION": "Points increase exponentially as you collect more Dumplings.",
+  "NIGIRI": "Nigiri",
+  "NIGIRI_DESCRIPTION": "Points are distributed as follows:",
+  "WASABI": "Wasabi",
+  "WASABI_DESCRIPTION": "Triples the value of the next Nigiri placed on it.",
+  "CHOPSTICKS": "Chopsticks",
+  "CHOPSTICKS_DESCRIPTION": "On the next turn, you play two cards.",
+  "PUDDING": "Pudding",
+  "PUDDING_DESCRIPTION": "The player with the most Pudding symbols at the end of the game earns 6 points, the player with the least loses 6 points. In case of a tie, points are divided equally.",
+  "END_OF_GAME_TITLE": "End of the Game",
+  "END_OF_GAME_DESCRIPTION": "The game ends after three rounds. The player with the highest score at the end of the three rounds wins."
+
+  
+
+  }
+  

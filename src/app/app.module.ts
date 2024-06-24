@@ -10,8 +10,9 @@ import { PuntuacionComponent } from './components/puntuacion/puntuacion.componen
 import { RankingComponent } from './components/ranking/ranking.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RoundSummaryComponent } from './components/summary/summary.component';
-
+import { AppTranslateModule } from './app.translate';
 import { HttpClientModule } from '@angular/common/http';
+import { InstruccionesComponent } from './components/instrucciones/instrucciones.component';
 
 @NgModule({
   declarations: [
@@ -21,13 +22,16 @@ import { HttpClientModule } from '@angular/common/http';
     PuntuacionComponent,
     RankingComponent,
     RoundSummaryComponent,
+    InstruccionesComponent
+   
   ],
   imports: [
     BrowserModule,
     FormsModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    HttpClientModule
+    AppTranslateModule,
+    HttpClientModule,
   ],
   providers: [
     provideClientHydration(),

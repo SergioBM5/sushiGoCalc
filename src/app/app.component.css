@@ -1,21 +1,37 @@
 .header {
-    display: flex;
-    position: fixed;
-    top: 0;
-    width: 100%;
-    height: 50px;
-    background-color: #373C27;
-    color: #fff;
-    text-align: center;
-    z-index: 1000;
-    align-items: center;
-  }
-  
-.header-content {
-    margin: 0 auto;
-    padding: 0 20px;
-  }
-  
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 0; /* Asegura que esté pegado al borde izquierdo */
+  width: 100%;
+  height: 50px;
+  background-color: #373c27;
+  color: #fff;
+  z-index: 1000;
+  align-items: center;
+  justify-content: space-between; /* Distribuye los elementos a lo largo del header */
+  padding: 0 20px; /* Ajusta el padding para dejar espacio a los botones */
+}
+
 .header-logo {
-    width: 50px;
-  }
+  width: 50px;
+  margin: 0 auto; /* Centra el logo horizontalmente */
+}
+
+.header-buttons {
+  display: flex;
+  align-items: center;
+  padding: 40px;
+}
+  
+.header-buttons button {
+  margin-left: 10px; /* Espacio entre los botones */
+  background: none;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+}
+
+.header-buttons button:hover {
+  text-decoration: underline;
+}
