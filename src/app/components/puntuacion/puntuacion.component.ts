@@ -23,31 +23,6 @@ export class PuntuacionComponent implements OnInit {
     this.currentRound = this.roundService.getCurrentRound(); 
   }
 
-  resetearPuntos(players: PlayerData[]): void {
-    players.forEach((player) => {
-      player.totalPoints = 0;
-      player.gyozaCount = 0;
-      player.makiCount = 0;
-      player.nigiriEggCount = 0;
-      player.nigiriSalmonCount = 0;
-      player.nigiriSquidCount = 0;
-      player.wasabiCount = 0;
-      player.totalPuddings = 0;
-      player.sashimiCount = 0;
-      player.tempuraCount = 0;
-      player.pointsRound1 = 0;
-      player.pointsRound2 = 0;
-      player.pointsRound3 = 0;
-      player.tempurapoints = 0;
-      player.nigiriEggpoints = 0;
-      player.nigiriSalmonpoints = 0;
-      player.nigirisquidpoints = 0;
-      player.sashimipoints = 0;
-      player.gyozaPoints = 0;
-      player.puddingPoints = 0;
-    });
-  }
-
   nextRound(players: PlayerData[]): void {
     players.forEach((player) => {
       player.gyozaCount = 0;
@@ -65,6 +40,8 @@ export class PuntuacionComponent implements OnInit {
       player.sashimipoints = 0;
       player.gyozaPoints = 0;
       player.puddingPoints = 0;
+      player.totalPuddings += player.puddingCount;
+      player.puddingCount = 0;
     });
   }
 

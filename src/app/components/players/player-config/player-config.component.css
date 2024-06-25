@@ -62,6 +62,8 @@
   border-radius: 8px;
   padding: 8px 12px;
   cursor: pointer;
+  font-family: 'Luckiest Guy';
+  box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.05);
 }
 
 /* Estilos para el botón de agregar jugador */
@@ -98,7 +100,9 @@
   cursor: pointer;
   background-color: #D2D2A4;
   color: #000;  
-  
+  font-family: 'Luckiest Guy';
+  border: 3px solid black;
+  box-shadow: 10px 10px 4px rgba(0, 0, 0, 0.05);  
 }
 
 .play-button{

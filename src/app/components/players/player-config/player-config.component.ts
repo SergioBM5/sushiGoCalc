@@ -3,12 +3,14 @@ import { Router } from '@angular/router';
 import { PlayerConfigService } from '../../../services/PlayersService';
 import { PlayerData } from '../../../services/playerDataModel';
 import { TranslateService } from '@ngx-translate/core';
+import { faTrashAlt } from '@fortawesome/free-solid-svg-icons';
 @Component({
   selector: 'app-player-config',
   templateUrl: './player-config.component.html',
   styleUrls: ['./player-config.component.css']
 })
 export class PlayerConfigComponent {
+  faTrashAlt = faTrashAlt;
 
   constructor(private router: Router, private playerConfigService: PlayerConfigService, private translate: TranslateService) {}
   

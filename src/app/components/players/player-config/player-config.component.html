@@ -4,7 +4,7 @@
       <div class="player-list">
         <div class="player-item" *ngFor="let player of players; let i = index">
           <input type="text" [ngModel]="player.playerName" (ngModelChange)="updatePlayer($event, i)" class="player-input">
-          <button class="delete-button" *ngIf="players.length >= 2" (click)="deletePlayer(i)">{{ 'DELETE_PLAYER' | translate }}</button>
+          <button class="delete-button" *ngIf="players.length >= 2" (click)="deletePlayer(i)"> <fa-icon [icon]="faTrashAlt"></fa-icon> </button>
         </div>
       </div>
       <div class="button">

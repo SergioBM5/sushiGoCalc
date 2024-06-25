@@ -13,6 +13,7 @@ import { RoundSummaryComponent } from './components/summary/summary.component';
 import { AppTranslateModule } from './app.translate';
 import { HttpClientModule } from '@angular/common/http';
 import { InstruccionesComponent } from './components/instrucciones/instrucciones.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { InstruccionesComponent } from './components/instrucciones/instrucciones
     BrowserAnimationsModule,
     AppTranslateModule,
     HttpClientModule,
+    FontAwesomeModule
   ],
   providers: [
     provideClientHydration(),
