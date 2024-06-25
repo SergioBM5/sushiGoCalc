@@ -34,10 +34,22 @@ align-items: center;
     }
 
     .landing-container-out{
-        padding: 10px;
         text-align: center;
         font-family: 'Luckiest Guy';
+        padding: 10px 0px 50px 0px;
         }
+
+        .landing-container-in:hover {
+          box-shadow: 10px 10px 8px rgba(0, 0, 0, 0.3); /* Añade una sombra más pronunciada */
+          transform: scale(1.015); /* Aumenta ligeramente el tamaño del contenedor */
+          transition: all 0.3s ease; /* Añade una transición suave */
+          }
+
+          .landing-container-in:active {
+            box-shadow: 10px 10px 8px rgba(0, 0, 0, 0.3); /* Añade una sombra más pronunciada */
+            transform: scale(1.015); /* Aumenta ligeramente el tamaño del contenedor */
+            transition: all 0.3s ease; /* Añade una transición suave */
+            }
   
   
   h1, h2 {

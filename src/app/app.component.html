@@ -3,6 +3,7 @@
 </div>
 <header class="header">
   <div class="header-content">
+    <button *ngIf="isInstruccionesPage" class="button-back" (click)="home()">{{ 'RETURN_HOME_BUTTON' | translate }}</button>
     <img src="assets/logo.png" class="header-logo" alt="SushiGoCalc Logo">
   </div>
   <div class="header-buttons">
@@ -10,3 +11,22 @@
     <button class="button" (click)="switchLanguage('es')">Español</button>
   </div>
 </header>
+
+<footer class="footer">
+  <div class="footer-content">
+    
+    <p>&copy;{{ 'COPYRIGHT' | translate }}</p>
+    <div class="redes-sociales">
+      <a href="https://www.github.com/SergioBM5" target="_blank" rel="noopener noreferrer">
+          <img src="assets/github.svg" alt="Facebook">
+      </a>
+      <a href="https://twitter.com/sergioblazqM" target="_blank" rel="noopener noreferrer">
+          <img src="assets/x-twitter.svg" alt="Twitter">
+      </a>
+      <a href="https://www.instagram.com/sergiodevhub" target="_blank" rel="noopener noreferrer">
+          <img src="assets/instagram.svg" alt="Instagram">
+      </a>
+      <!-- Agrega más redes sociales según tus necesidades -->
+  </div>
+  </div>
+</footer>

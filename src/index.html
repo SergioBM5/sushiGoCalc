@@ -2,11 +2,23 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
+  <meta name="description" content="SushiGoCalc es la herramienta esencial para mejorar tu estrategia en el popular juego de cartas Sushi Go. Calcula tus puntuaciones rápidamente, optimiza tus decisiones de juego y domina cada partida con nuestras funciones intuitivas. Descubre nuevas estrategias, compite con amigos y eleva tu experiencia en Sushi Go con SushiGoCalc.">
   <title>SushiGoCalc</title>
   <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link rel="canonical" href="https://www.sushigocalc.es/">
   <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet">
+  <base href="https://www.sushigocalc.es/">
+  <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+  <script>
+    window.onload = function() {
+        if (performance.navigation.type === 1) {
+            // Redirigir a la página de inicio
+            window.location.href = '/';
+        }
+    };
+</script>
 </head>
 <body>
   <app-root></app-root>

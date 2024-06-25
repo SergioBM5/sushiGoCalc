@@ -13,7 +13,7 @@ export class RoundSummaryComponent implements OnInit {
   rounds: number[] = [1, 2, 3];
   currentRound: number = 1;
   round: number = 1;
-
+  
   constructor(private router: Router, private roundService: RoundService) {
     const navigation = this.router.getCurrentNavigation();
     if (navigation?.extras?.state) {
@@ -25,6 +25,7 @@ export class RoundSummaryComponent implements OnInit {
   }
 
   ngOnInit(): void {}
+
 
   getPointsForRound(player: PlayerData, round: number): number {
     if (round === 1) {

@@ -37,16 +37,18 @@
 
 .header-logo {
   width: 50px;
-  margin-left: 140px;
+  margin-left: 160px;
 }
 
 .header-buttons {
+  margin-right: 5px;
   display: flex;
   align-items: center;
   margin-right: 40px;
 }
 
 .header-buttons .button{
+  margin-right: 5px;
   color: black;
   font-family: 'Luckiest Guy';
   font-size: medium;
@@ -59,3 +61,79 @@
 
 }
 
+.button-back{
+  position: absolute;
+  display: flex;
+  left: 0;
+  background-color: bisque;
+    font-family: 'Luckiest Guy' ;
+    border: 3px solid black; /* Borde negro de 2px */
+    border-radius: 10px;
+    margin: 0px 5px 125px 10px;
+    z-index: 999999;
+    box-shadow: 10px 10px 4px rgba(0, 0, 0, 0.1);
+    
+
+}
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: #373C27;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 20px; /* Ajusta el padding según sea necesario */
+  box-sizing: border-box;
+  }
+  .footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+  
+  .redes-sociales {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    flex: 1; /* Ocupa el espacio central */
+    padding: 10px 160px 5px 10px;
+  }
+  
+  .redes-sociales a {
+    margin: 0 10px; /* Espacio entre cada ícono */
+  }
+  
+  .redes-sociales img {
+    width: 30px; /* Ajusta el tamaño de los íconos según sea necesario */
+    height: auto;
+  }
+  
+  .footer-copyright {
+    flex-shrink: 0; /* Evita que el texto se reduzca */
+    margin-left: auto; /* Mueve el texto de copyright a la derecha */
+    text-align: right; /* Alinea el texto a la derecha */
+  }
+
+  @media (max-width: 768px) {
+    .header-buttons .button {
+      font-size: small; /* Reduce el tamaño de fuente en pantallas más pequeñas */
+      padding: 3px 6px; /* Ajusta el padding para reducir el tamaño del botón */
+    }
+    .header-logo{
+      margin-left: 130px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .header-buttons .button {
+      font-size: x-small; /* Reduce aún más el tamaño de fuente */
+      padding: 2px 4px; /* Ajusta el padding para pantallas muy pequeñas */
+    }
+    .header-logo{
+      margin-left: 110px;
+    }
+  }

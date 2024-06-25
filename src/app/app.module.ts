@@ -14,6 +14,8 @@ import { AppTranslateModule } from './app.translate';
 import { HttpClientModule } from '@angular/common/http';
 import { InstruccionesComponent } from './components/instrucciones/instrucciones.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { AccessGuard } from './access.guard';
+import { AccessService } from './access.service';
 
 @NgModule({
   declarations: [
@@ -36,7 +38,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     FontAwesomeModule
   ],
   providers: [
-    provideClientHydration(),
+    provideClientHydration(),AccessService, AccessGuard
   ],
   bootstrap: [AppComponent]
 })

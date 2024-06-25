@@ -4,8 +4,8 @@
       <img src="assets/logo.png" class="game-logo">
       <h1>{{ 'WELCOME_MESSAGE' | translate }}</h1>
       <div class="button-container">
-        <button class="button" routerLink="/player-config" routerLinkActive="active">{{ 'START_GAME' | translate }}</button> 
-        <button routerLink="/instrucciones" routerLinkActive="active">{{ 'HOW_TO_PLAY' | translate }}</button>
+        <button class="button"(click)="play()">{{ 'START_GAME' | translate }}</button> 
+        <button (click)="howtoPlay()">{{ 'HOW_TO_PLAY' | translate }}</button>
       </div>
     </div>
     <div class="makisu">
@@ -18,10 +18,7 @@
       </a>
     </div> -->
   </div>
-  <footer class="footer">
-    <div class="footer-content">
-      <p>&copy;{{ 'COPYRIGHT' | translate }}</p>
-    </div>
-  </footer>
+ 
 </div>
 </div>
+

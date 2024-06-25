@@ -114,13 +114,5 @@
 .button button:hover {
   background-color: #FCF3CF;
 }
-.footer {
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  background-color: #373C27;
-  color: #fff;
-  text-align: center;
-  text-decoration: underline;
-  }
+
   
