@@ -248,11 +248,6 @@ License: "SEE LICENSE IN LICENSE"
 
 
 --------------------------------------------------------------------------------
-Package: @angular/forms
-License: "MIT"
-
-
---------------------------------------------------------------------------------
 Package: @fortawesome/free-solid-svg-icons
 License: "(CC-BY-4.0 AND MIT)"
 
@@ -421,6 +416,11 @@ All brand icons are trademarks of their respective owners. The use of these
 trademarks does not indicate endorsement of the trademark holder by Font
 Awesome, nor vice versa. **Please do not use brand logos for any purpose except
 to represent the company, product, or service to which they refer.**
+
+--------------------------------------------------------------------------------
+Package: @angular/forms
+License: "MIT"
+
 
 --------------------------------------------------------------------------------
 Package: @fortawesome/fontawesome-svg-core

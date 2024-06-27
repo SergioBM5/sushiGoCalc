@@ -12,39 +12,75 @@
     </div>
     <div class="row">
       <div class="cell">Maki</div>
-      <div *ngFor="let player of players" class="cell"><input type="number" class="inputs" [(ngModel)]="player.makiCount"></div>
-    </div>
+      <div *ngFor="let player of players" class="cell">
+        <button class="btn-minus" (click)="decrement(player, 'makiCount')">-</button>
+        <span class="inputs">{{ player.makiCount }}</span>
+        <button class="btn-plus" (click)="increment(player, 'makiCount')">+</button>
+      </div>
+      </div>
     <div class="row">
       <div class="cell">Tempura</div>
-      <div *ngFor="let player of players" class="cell"><input type="number" class="inputs" [(ngModel)]="player.tempuraCount"></div>
+      <div *ngFor="let player of players" class="cell">
+        <button class="btn-minus" (click)="decrement(player, 'tempuraCount')">-</button>
+        <span class="inputs">{{ player.tempuraCount }}</span>
+        <button class="btn-plus" (click)="increment(player, 'tempuraCount')">+</button>
+      </div>
     </div>
     <div class="row">
       <div class="cell">Nigiri 🦑</div>
-      <div *ngFor="let player of players" class="cell"><input type="number" class="inputs" [(ngModel)]="player.nigiriSquidCount"></div>
+      <div *ngFor="let player of players" class="cell">
+        <button class="btn-minus" (click)="decrement(player, 'nigiriSquidCount')">-</button>
+        <span class="inputs">{{ player.nigiriSquidCount }}</span>
+        <button class="btn-plus" (click)="increment(player, 'nigiriSquidCount')">+</button>
+      </div>
     </div>
     <div class="row">
       <div class="cell">Nigiri 🐟</div>
-      <div *ngFor="let player of players" class="cell"><input type="number" class="inputs" [(ngModel)]="player.nigiriSalmonCount"></div>
+      <div *ngFor="let player of players" class="cell">
+        <button class="btn-minus" (click)="decrement(player, 'nigiriSalmonCount')">-</button>
+        <span class="inputs">{{ player.nigiriSalmonCount }}</span>
+        <button class="btn-plus" (click)="increment(player, 'nigiriSalmonCount')">+</button>
+      </div>
     </div>
     <div class="row">
       <div class="cell">Nigiri 🥚</div>
-      <div *ngFor="let player of players" class="cell"><input type="number" class="inputs" [(ngModel)]="player.nigiriEggCount"></div>
+      <div *ngFor="let player of players" class="cell">
+        <button class="btn-minus" (click)="decrement(player, 'nigiriEggCount')">-</button>
+        <span class="inputs">{{ player.nigiriEggCount }}</span>
+        <button class="btn-plus" (click)="increment(player, 'nigiriEggCount')">+</button>
+      </div>
     </div>
     <div class="row">
       <div class="cell">Wasabi</div>
-      <div *ngFor="let player of players" class="cell"><input type="number" class="inputs" [(ngModel)]="player.wasabiCount"></div>
+      <div *ngFor="let player of players" class="cell">
+        <button class="btn-minus" (click)="decrement(player, 'wasabiCount')">-</button>
+        <span class="inputs">{{ player.wasabiCount }}</span>
+        <button class="btn-plus" (click)="increment(player, 'wasabiCount')">+</button>
+      </div>
     </div>
     <div class="row">
       <div class="cell">Sashimi</div>
-      <div *ngFor="let player of players" class="cell"><input type="number" class="inputs" [(ngModel)]="player.sashimiCount"></div>
+      <div *ngFor="let player of players" class="cell">
+        <button class="btn-minus" (click)="decrement(player, 'sashimiCount')">-</button>
+        <span class="inputs">{{ player.sashimiCount }}</span>
+        <button class="btn-plus" (click)="increment(player, 'sashimiCount')">+</button>
+      </div>
     </div>
     <div class="row">
       <div class="cell">Gyoza</div>
-      <div *ngFor="let player of players" class="cell"><input type="number" class="inputs" [(ngModel)]="player.gyozaCount"></div>
+      <div *ngFor="let player of players" class="cell">
+        <button class="btn-minus" (click)="decrement(player, 'gyozaCount')">-</button>
+        <span class="inputs">{{ player.gyozaCount }}</span>
+        <button class="btn-plus" (click)="increment(player, 'gyozaCount')">+</button>
+      </div>
     </div>
     <div class="row">
       <div class="cell">Pudding</div>
-      <div *ngFor="let player of players" class="cell"><input type="number" class="inputs" [(ngModel)]="player.puddingCount"></div>
+      <div *ngFor="let player of players" class="cell">
+        <button class="btn-minus" (click)="decrement(player, 'puddingCount')">-</button>
+        <span class="inputs">{{ player.puddingCount }}</span>
+        <button class="btn-plus" (click)="increment(player, 'puddingCount')">+</button>
+      </div>
     </div>
   </div>
 

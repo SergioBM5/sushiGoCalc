@@ -47,6 +47,41 @@
   font-size: 15px;
 }
 
+.cell button {
+  background-color: #373c27;
+  color: white;
+  border-radius: 3px;
+  width: 25px;
+  height: 25px;
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+  margin: 0 54px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  font-size: 16px; /* Tamaño de fuente para botones */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.cell button:hover {
+  background-color: #b4b477;
+  transform: scale(1.1); /* Escala para hover */
+}
+.cell button:active {
+  background-color: #3e8e41;
+  transform: scale(0.9); /* Escala para cuando el botón está activo */
+}
+.cell span {
+  min-width: 40px;
+  text-align: center;
+  font-size: 18px; /* Tamaño de fuente para el span */
+  font-weight: bold;
+  color: #333;
+}
+.btn-plus{
+  display: flex;
+  align-items: center;
+}
+
 .header .cell {
   font-weight: bold;
   background-color: #D2D2A4;
@@ -104,7 +139,7 @@
   max-width: 100%;
 }
 .blank {	
-  max-width: 770px;
+  max-width: 975px;
   height: 35px;
   align-items: center;
   display: flex;
@@ -114,7 +149,7 @@
   border:  1px solid black;
   justify-content: center;
   font-size: 13px;
-  margin: 40px 10px 0px;
+  margin: 40px 10px 40px;
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   background-color: #f2f2f2;
@@ -183,11 +218,20 @@
     padding: 5px;
     margin: 20px 5px 0px;
   }
+
+  .cell button {
+ 
+    margin: 0 5px;
+   
+  }
+
 }
 
 /* Media queries para tablets */
 @media only screen and (min-width: 601px) and (max-width: 1024px) {
-
+.blank{
+  max-width: 612px;
+}
   .cuerpo {
     height: auto;
   }
@@ -219,6 +263,12 @@
     padding: 7px;
     margin: 30px 10px 0px;
   }
+  .cell button {
+ 
+    margin: 0 27px;
+   
+  }
+
 }
 /* Media queries para dispositivos móviles pequeños */
 @media only screen and (max-width: 375px) {
@@ -267,5 +317,12 @@
     padding: 4px;
     margin: 15px 5px 0px;
   }
+
+  .cell button {
+ 
+    margin: 0 -1px;
+   
+  }
+
 }
 

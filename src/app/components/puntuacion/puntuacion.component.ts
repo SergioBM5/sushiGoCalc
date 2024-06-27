@@ -239,4 +239,14 @@ export class PuntuacionComponent implements OnInit {
     this.roundService.resetRound(); // Reinicia la ronda en el servicio
     this.currentRound = this.roundService.getCurrentRound(); // Actualiza la ronda actual desde el servicio
   }
+
+  increment(player: PlayerData, field: keyof PlayerData): void {
+    player[field] = (Number(player[field]) + 1) as never;
+  }
+  
+  decrement(player: PlayerData, field: keyof PlayerData): void {
+    if (Number(player[field]) > 0) {
+      player[field] = (Number(player[field]) - 1) as never;
+    }
+  }
 }
