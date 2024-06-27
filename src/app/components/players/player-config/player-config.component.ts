@@ -11,6 +11,8 @@ import { faTrashAlt } from '@fortawesome/free-solid-svg-icons';
 })
 export class PlayerConfigComponent {
   faTrashAlt = faTrashAlt;
+  errorMessage: string | null = null;
+  showAlertClass = false;
 
   constructor(private router: Router, private playerConfigService: PlayerConfigService, private translate: TranslateService) {}
   
@@ -121,23 +123,27 @@ export class PlayerConfigComponent {
   }
 
   play():void{
-    const alertMessage = this.translate.instant('ALERT_MISSING_PLAYERS');
-    const alertMessageNames = this.translate.instant('ALERT_MISSING_PLAYERS_NAMES');
-    switch(this.players.length) {
-    case 1:
-      throw alert(alertMessage);
-    default:
-      this.players.forEach(player => {
-        if(player.playerName != "")
-        this.playerName = true
-        else this.playerName = false;
-      });
+    if (this.players.length < 2) {
+      this.errorMessage = this.translate.instant('ALERT_MISSING_PLAYERS');
+      this.showAlert(this.errorMessage);
+    } else if (this.players.some(player => !player.playerName.trim())) {
+      this.errorMessage = this.translate.instant('ALERT_MISSING_PLAYERS_NAMES');
+      this.showAlert(this.errorMessage);
+    } else {
+      this.errorMessage = null;
+      this.playerName = true;
       this.startGame = this.players.length >=2 && this.playerName == true; // Actualiza la visibilidad del botón de agregar
       if(this.startGame) {
            this.router.navigateByUrl('/puntuacion');
           }
-    else{ 
-    alert(alertMessageNames);}
-    }
-}
+  }
+  }
+
+  showAlert(message: string | null) {
+    this.errorMessage = message;
+    this.showAlertClass = true;
+    setTimeout(() => {
+      this.errorMessage = null;
+    }, 500000); // Ocultar la alerta después de 5 segundos
+  }
 }

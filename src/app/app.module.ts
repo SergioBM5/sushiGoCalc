@@ -16,6 +16,7 @@ import { InstruccionesComponent } from './components/instrucciones/instrucciones
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { AccessGuard } from './access.guard';
 import { AccessService } from './access.service';
+import { AlertModule } from '@coreui/angular';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { AccessService } from './access.service';
     BrowserAnimationsModule,
     AppTranslateModule,
     HttpClientModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    AlertModule 
   ],
   providers: [
     provideClientHydration(),AccessService, AccessGuard

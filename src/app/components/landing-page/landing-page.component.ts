@@ -10,6 +10,7 @@ import { AccessService } from '../../access.service';
 export class LandingPageComponent {
   isMenuOpen: boolean = false;
 
+
   constructor(private router: Router,private accessService: AccessService) { }
 
   ngOnInit(): void {
@@ -29,4 +30,5 @@ export class LandingPageComponent {
     this.router.navigate(['/instrucciones']);
    
   }
+
 }
