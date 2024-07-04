@@ -19,10 +19,11 @@
 }
 
 .landing-page button {
+  width: 157px;
   font-family: "Luckiest Guy", cursive;
   margin: 10px 10px 10px 10px;
   padding: 10px 20px;
-  font-size: 16px;
+  font-size: 13px;
   cursor: pointer;
   background-color: #D2D2A4;
   color: #000;
@@ -96,8 +97,7 @@
 
   .landing-page {
     width: auto;
-    height: 80vh;
-    margin: 5vh auto;
+   
   }
 
   .landing-page h1 {
@@ -124,7 +124,6 @@
   .landing-page .landing-container,
   .landing-page {
     width: auto;
-    margin: 5vh auto;
     }
 
   .landing-page h1 {

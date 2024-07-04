@@ -40,27 +40,30 @@ export class RankingComponent implements OnInit {
     this.home();
    }
 
+   review():void{
+    this.router.navigate(['/review'], { state: { players: this.players} });
+    
+   }
+
    resetearPuntos(players: PlayerData[]): void {
     players.forEach((player) => {
       player.totalPoints = 0;
-      player.gyozaCount = 0;
-      player.makiCount = 0;
-      player.nigiriEggCount = 0;
-      player.nigiriSalmonCount = 0;
-      player.nigiriSquidCount = 0;
-      player.totalPuddings = 0;
-      player.sashimiCount = 0;
-      player.tempuraCount = 0;
-      player.pointsRound1 = 0;
-      player.pointsRound2 = 0;
-      player.pointsRound3 = 0;
-      player.tempurapoints = 0;
-      player.nigiriEggpoints = 0;
-      player.nigiriSalmonpoints = 0;
-      player.nigirisquidpoints = 0;
-      player.sashimipoints = 0;
-      player.gyozaPoints = 0;
-      player.puddingPoints = 0;
+      player.gyozaCount = [0,0,0];
+      player.makiCount = [0,0,0];
+      player.nigiriEggCount =[0,0,0];
+      player.nigiriSalmonCount = [0,0,0];
+      player.nigiriSquidCount = [0,0,0];
+      player.totalPuddings = [0,0,0];
+      player.sashimiCount = [0,0,0];
+      player.tempuraCount = [0,0,0];
+      player.pointsRound = [0,0,0];
+      player.tempurapoints = [0,0,0];
+      player.nigiriEggpoints = [0,0,0];
+      player.nigiriSalmonpoints = [0,0,0];
+      player.nigirisquidpoints = [0,0,0];
+      player.sashimipoints =[0,0,0];
+      player.gyozaPoints = [0,0,0];
+      player.puddingPoints = [0,0,0];
     });
   }
   

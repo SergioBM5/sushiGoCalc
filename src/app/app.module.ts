@@ -17,6 +17,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { AccessGuard } from './access.guard';
 import { AccessService } from './access.service';
 import { AlertModule } from '@coreui/angular';
+import { ReviewComponent } from './components/review/review.component';
+
 
 @NgModule({
   declarations: [
@@ -26,8 +28,8 @@ import { AlertModule } from '@coreui/angular';
     PuntuacionComponent,
     RankingComponent,
     RoundSummaryComponent,
-    InstruccionesComponent
-   
+    InstruccionesComponent,
+    ReviewComponent,
   ],
   imports: [
     BrowserModule,

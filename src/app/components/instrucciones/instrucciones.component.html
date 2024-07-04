@@ -1,58 +1,131 @@
-<div class="instrucciones">
-  <div class="landing-container-out">
-    <div class="header">
-      
-      <h1>{{ 'HOW_TO_PLAY_TITLE' | translate }}</h1>
+<div appScrollDetection>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guía de Estrategias y Consejos - Sushi Go!</title>
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="apple-touch-icon" href="src/assets/icon-192x192.png">
+    
+</head>
+<body>
+    <div class="instrucciones">
+        <div class="landing-container-out">
+            <div class="header">
+                <button class="tab-button" (click)="showSection('how-to-play')">{{ 'HOW_TO_PLAY_TITLE' | translate }}</button>
+                <button class="tab-button" (click)="showSection('strategies')">Estrategias</button>
+            </div>
+
+            <div id="how-to-play" class="content-section">
+                <div class="landing-container-in">
+                    <h2>{{ 'OBJECTIVE_TITLE' | translate }}</h2>
+                    <p>{{ 'OBJECTIVE_DESCRIPTION' | translate }}</p>
+                </div>
+
+                <div class="landing-container-in">
+                    <h2>{{ 'PREPARATION_TITLE' | translate }}</h2>
+                    <ol>
+                        <li>{{ 'PREPARATION_STEP_1' | translate }}</li>
+                        <li>{{ 'PREPARATION_STEP_2' | translate }}</li>
+                        <li>{{ 'PREPARATION_STEP_3' | translate }}</li>
+                    </ol>
+                </div>
+
+                <div class="landing-container-in">
+                    <h2>{{ 'GAMEPLAY_TITLE' | translate }}</h2>
+                    <ol>
+                        <li>{{ 'GAMEPLAY_STEP_1' | translate }}</li>
+                        <li>{{ 'GAMEPLAY_STEP_2' | translate }}</li>
+                        <li>{{ 'GAMEPLAY_STEP_3' | translate }}</li>
+                        <li>{{ 'GAMEPLAY_STEP_4' | translate }}</li>
+                    </ol>
+                </div>
+
+                <div class="landing-container-in">
+                    <h2>{{ 'SCORING_TITLE' | translate }}</h2>
+                    <p>{{ 'SCORING_DESCRIPTION' | translate }}</p>
+                    <ul>
+                        <li><strong>{{ 'MAKI_ROLLS' | translate }}:</strong> {{ 'MAKI_ROLLS_DESCRIPTION' | translate }}</li>
+                        <li><strong>{{ 'TEMPURA' | translate }}:</strong> {{ 'TEMPURA_DESCRIPTION' | translate }}</li>
+                        <li><strong>{{ 'SASHIMI' | translate }}:</strong> {{ 'SASHIMI_DESCRIPTION' | translate }}</li>
+                        <li><strong>{{ 'DUMPLINGS' | translate }}:</strong> {{ 'DUMPLINGS_DESCRIPTION' | translate }}</li>
+                        <li><strong>{{ 'NIGIRI' | translate }}:</strong> {{ 'NIGIRI_DESCRIPTION' | translate }}</li>
+                        <li><strong>{{ 'WASABI' | translate }}:</strong> {{ 'WASABI_DESCRIPTION' | translate }}</li>
+                        <li><strong>{{ 'CHOPSTICKS' | translate }}:</strong> {{ 'CHOPSTICKS_DESCRIPTION' | translate }}</li>
+                        <li><strong>{{ 'PUDDING' | translate }}:</strong> {{ 'PUDDING_DESCRIPTION' | translate }}</li>
+                    </ul>
+                </div>
+
+                <div class="landing-container-in">
+                    <h2>{{ 'END_OF_GAME_TITLE' | translate }}</h2>
+                    <p>{{ 'END_OF_GAME_DESCRIPTION' | translate }}</p>
+                </div>
+            </div>
+
+            <div id="strategies" class="content-section" style="display: none;">
+              <div class="landing-container-in">
+                <section>
+                    <h2>Estrategias Generales</h2>
+                    <p><strong>Comprender las Cartas:</strong> Es crucial conocer el valor y el uso de cada tipo de carta.</p>
+                    <p><strong>Balancear Riesgo y Recompensa:</strong> Aprende a decidir cuándo arriesgarse y cuándo jugar a lo seguro.</p>
+                    <p><strong>Adaptarse a la Situación:</strong> Ajusta tu estrategia según las cartas que recibas y las jugadas de tus oponentes.</p>
+                </section>
+              </div>
+              <div class="landing-container-in">
+                <section>
+                    <h2>Nigiri</h2>
+                    <p><strong>Nigiri de Pescado (1, 2, y 3 puntos):</strong> Recoge Nigiri en las primeras rondas para asegurar puntos básicos y combina con Wasabi para maximizar el valor.</p>
+                    <p><strong>Wasabi:</strong> Prioriza obtener Wasabi si tienes un Nigiri de alto valor en la mano o esperas obtener uno pronto.</p>
+                </section>
+              </div>
+              <div class="landing-container-in">
+                <section>
+                    <h2>Maki Rolls</h2>
+                    <p>Los Maki Rolls son importantes para ganar el bonus de mayoría. Intenta recoger la mayor cantidad posible para asegurar puntos adicionales.</p>
+                </section>
+            </div>
+            <div class="landing-container-in">
+                <section>
+                    <h2>Tempura</h2>
+                    <p>Junta Tempura en pares para maximizar puntos. Evita tomar Tempura si no puedes completarlo en grupos de dos.</p>
+                </section>
+              </div>
+              <div class="landing-container-in">
+                <section>
+                    <h2>Sashimi</h2>
+                    <p>Recolecta Sashimi en grupos de tres para obtener puntos significativos. Ten cuidado de no quedarte a medias.</p>
+                </section>
+              </div>
+              <div class="landing-container-in">
+                <section>
+                    <h2>Dumplings</h2>
+                    <p>La progresión de puntos de los Dumplings puede ser muy beneficiosa. Cuantos más recojas, más puntos obtendrás.</p>
+                </section>
+              </div>
+              <div class="landing-container-in">
+                <section>
+                    <h2>Pudding</h2>
+                    <p>Las cartas de Pudding son cruciales para el puntaje final. Asegúrate de tener suficientes para evitar penalizaciones.</p>
+                </section>
+              </div>
+              <div class="landing-container-in">
+                <section>
+                    <h2>Estrategias Avanzadas</h2>
+                    <p><strong>Lectura de Oponentes:</strong> Observa las jugadas de tus oponentes para anticipar sus movimientos.</p>
+                    <p><strong>Gestión de la Mano:</strong> Maneja tu mano de cartas y optimiza tus selecciones.</p>
+                    <p><strong>Optimización de Turnos:</strong> Planifica tus jugadas a lo largo de la partida para maximizar puntos.</p>
+                </section>
+                </div>
+            </div>
+        </div>
     </div>
 
-    <div class="landing-container-in">
-      <h2>{{ 'OBJECTIVE_TITLE' | translate }}</h2>
-      <p>
-        {{ 'OBJECTIVE_DESCRIPTION' | translate }}
-      </p>
-    </div>  
-
-    <div class="landing-container-in">
-      <h2>{{ 'PREPARATION_TITLE' | translate }}</h2>
-      <ol>
-        <li>{{ 'PREPARATION_STEP_1' | translate }}</li>
-        <li>{{ 'PREPARATION_STEP_2' | translate }}</li>
-        <li>{{ 'PREPARATION_STEP_3' | translate }}</li>
-      </ol>
-    </div>
-
-    <div class="landing-container-in">
-      <h2>{{ 'GAMEPLAY_TITLE' | translate }}</h2>
-      <ol>
-        <li>{{ 'GAMEPLAY_STEP_1' | translate }}</li>
-        <li>{{ 'GAMEPLAY_STEP_2' | translate }}</li>
-        <li>{{ 'GAMEPLAY_STEP_3' | translate }}</li>
-        <li>{{ 'GAMEPLAY_STEP_4' | translate }}</li>
-      </ol>
-    </div>
-
-    <div class="landing-container-in">
-      <h2>{{ 'SCORING_TITLE' | translate }}</h2>
-      <p>
-        {{ 'SCORING_DESCRIPTION' | translate }}
-      </p>
-      <ul>
-        <li><strong>{{ 'MAKI_ROLLS' | translate }}:</strong> {{ 'MAKI_ROLLS_DESCRIPTION' | translate }}</li>
-        <li><strong>{{ 'TEMPURA' | translate }}:</strong> {{ 'TEMPURA_DESCRIPTION' | translate }}</li>
-        <li><strong>{{ 'SASHIMI' | translate }}:</strong> {{ 'SASHIMI_DESCRIPTION' | translate }}</li>
-        <li><strong>{{ 'DUMPLINGS' | translate }}:</strong> {{ 'DUMPLINGS_DESCRIPTION' | translate }}</li>
-        <li><strong>{{ 'NIGIRI' | translate }}:</strong> {{ 'NIGIRI_DESCRIPTION' | translate }}</li>
-        <li><strong>{{ 'WASABI' | translate }}:</strong> {{ 'WASABI_DESCRIPTION' | translate }}</li>
-        <li><strong>{{ 'CHOPSTICKS' | translate }}:</strong> {{ 'CHOPSTICKS_DESCRIPTION' | translate }}</li>
-        <li><strong>{{ 'PUDDING' | translate }}:</strong> {{ 'PUDDING_DESCRIPTION' | translate }}</li>
-      </ul>
-    </div>
-
-    <div class="landing-container-in">
-      <h2>{{ 'END_OF_GAME_TITLE' | translate }}</h2>
-      <p>
-        {{ 'END_OF_GAME_DESCRIPTION' | translate }}
-      </p>
-    </div>
-  </div>
+    <footer>
+        <p>&copy; 2024 SushiGoCalc. Todos los derechos reservados.</p>
+    </footer>
+  </body>
+  </html>
 </div>

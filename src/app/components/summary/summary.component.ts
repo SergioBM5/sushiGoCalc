@@ -21,40 +21,53 @@ export class RoundSummaryComponent implements OnInit {
       this.players = state.players;
       this.round = state.round;
     }
-    this.currentRound = this.roundService.getCurrentRound(); // Obtener la ronda actual del servicio
+    this.currentRound = this.round // Obtener la ronda actual del servicio
   }
 
   ngOnInit(): void {}
 
 
-  getPointsForRound(player: PlayerData, round: number): number {
-    if (round === 1) {
-      return player.pointsRound1;
-    } else if (round === 2) {
-      return player.pointsRound2;
-    } else if (round === 3) {
-      return player.pointsRound3;
-    }
-    return 0;
+  getPointsForRound(player: PlayerData,currentRound:number): number {
+    
+    return player.pointsRound[currentRound - 1];
   }
 
-  lastRound(players: PlayerData[]): void {
+  nextRound(players: PlayerData[], currentRound: number): void {
     players.forEach((player) => {
-      if(this.currentRound == 1)
-      player.pointsRound1 = 0
-    else if (this.currentRound == 2)
-      player.pointsRound2 = 0
-    else player.pointsRound3 == 0
+      // Inicializa los arrays si no están definidos
+      player.gyozaCount[currentRound + 1] = player.gyozaCount[currentRound + 1] || 0;
+      player.makiCount[currentRound + 1] = player.makiCount[currentRound + 1] || 0;
+      player.nigiriEggCount[currentRound + 1] = player.nigiriEggCount[currentRound + 1] || 0;
+      player.nigiriSalmonCount[currentRound + 1] = player.nigiriSalmonCount[currentRound + 1] || 0;
+      player.nigiriSquidCount[currentRound + 1] = player.nigiriSquidCount[currentRound + 1] || 0;
+      player.wasabiCount[currentRound + 1] = player.wasabiCount[currentRound + 1] || 0;
+      player.sashimiCount[currentRound + 1] = player.sashimiCount[currentRound + 1] || 0;
+      player.tempuraCount[currentRound + 1] = player.tempuraCount[currentRound + 1] || 0;
+      player.tempurapoints[currentRound + 1] = player.tempurapoints[currentRound + 1] || 0;
+      player.nigiriEggpoints[currentRound + 1] = player.nigiriEggpoints[currentRound + 1] || 0;
+      player.nigiriSalmonpoints[currentRound + 1] = player.nigiriSalmonpoints[currentRound + 1] || 0;
+      player.nigirisquidpoints[currentRound + 1] = player.nigirisquidpoints[currentRound + 1] || 0;
+      player.sashimipoints[currentRound + 1] = player.sashimipoints[currentRound + 1] || 0;
+      player.gyozaPoints[currentRound + 1] = player.gyozaPoints[currentRound + 1] || 0;
+      player.puddingPoints[currentRound + 1] = player.puddingPoints[currentRound + 1] || 0;
+      player.totalPuddings[currentRound] = (player.totalPuddings[currentRound] || 0) + (player.puddingCount[currentRound] || 0);
+      player.puddingCount[currentRound + 1] = 0;
+    });
+  }
+  lastRound(players: PlayerData[], currentRound: number): void {
+    players.forEach((player) => {
+        player.pointsRound[currentRound - 1] = 0;     
     });
   }
 
   goToNextRound(): void {
-    this.roundService.incrementRound(); // Incrementar la ronda en el servicio
-    this.router.navigateByUrl('/puntuacion');
+    this.nextRound(this.players,this.currentRound);
+    this.currentRound = this.currentRound + 1;
+    this.router.navigateByUrl('/puntuacion', { state: { players: this.players, round: this.currentRound } });
   }
 
   goBack(): void {
-    this.lastRound(this.players)
-    this.router.navigate(['/puntuacion']);
+    this.lastRound(this.players,this.currentRound)
+    this.router.navigate(['/puntuacion'], { state: { players: this.players,  round: this.currentRound } });
   }
 }

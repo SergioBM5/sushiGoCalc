@@ -1,3 +1,16 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ranking de jugadores!</title>
+
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <link rel="apple-touch-icon" href="src/assets/icon-192x192.png">
+
+</head>
 <div class = "landing-container">
 <div class="container" *ngIf="players.length<2">
 
@@ -39,10 +52,14 @@
   </tbody>
 </table>
 </div>
-<button *ngIf="players.length>=2" class="new-game" routerLinkActive="active" (click)="newGame()">{{ 'NEW_GAME_BUTTON' | translate }}</button> 
+<div  class="buttons-end">
+<button  class="new-game" routerLinkActive="active" (click)="review()">{{ 'CHECK_ROUNDS_BUTTON' | translate }}</button> 
+<button  class="new-game" routerLinkActive="active" (click)="newGame()">{{ 'NEW_GAME_BUTTON' | translate }}</button> 
+</div>
 </div>
 <footer class="footer">
   <div class="footer-content">
     <p>&copy; {{ 'COPYRIGHT' | translate }}</p>
   </div>
 </footer>
+</html>

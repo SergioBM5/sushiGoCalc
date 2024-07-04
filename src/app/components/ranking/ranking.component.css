@@ -33,24 +33,27 @@ table {
   .landing-container {
     background-color: #f8ebd0;
     width: 100%;
-    height: 98vh; /* Cambiado a 100vh para ocupar toda la pantalla vertical */
+    height: 98vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    font-family: 'Luckiest Guy', cursive;
+    font-family: "Luckiest Guy", cursive;
     border-radius: 10px;
     background-size: cover;
     background-position: center;
+    align-items: center;
   }
 
 
   .container {
+    display: flex;
     background-color: bisque;
-    border: 3px solid black; /* Borde negro de 2px */
-    padding: 20px; /* Espacio interno para separar el contenido del borde */
-    max-width: 400px; /* Ancho máximo deseado */
-    margin: 0 auto; /* Centrar horizontalmente */
+    border: 3px solid black;
+    padding: 20px;
+    max-width: 400px;
+    margin: 0px 14px 0px 14px;
     border-radius: 20px;
+    flex-direction: column;
   }
 
   .box {	
@@ -86,7 +89,7 @@ table {
   .new-game{
     font-family: 'Luckiest Guy', cursive;
     display: block;
-    margin: 30px auto;
+    margin: 30px;
     padding: 10px 20px;
     font-size: 16px;
     cursor: pointer;
@@ -99,6 +102,13 @@ table {
   .buttons {
     margin: 50px auto;
    }
+
+   .buttons-end {
+    margin: 20px auto;
+    display: flex;
+   }
+
+
 
    .footer {
     bottom:0;

@@ -1,113 +1,136 @@
+<div appScrollDetection>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculadora de puntuacion</title>
+
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <link rel="apple-touch-icon" href="src/assets/icon-192x192.png">
+</head>
 <div class="cuerpo">
-<div class="roundheader">
-  <div class="blank">{{ 'ROUND' | translate }} {{ currentRound }}</div>
-</div>
-<div class="container2">
-<div class="container">
-  <div class="score-table">
- 
-    <div class="row header">
-      <div class="cell"></div>
-      <div *ngFor="let player of players" class="cell player-name">{{ player.playerName }}</div>
-    </div>
-    <div class="row">
-      <div class="cell">Maki</div>
-      <div *ngFor="let player of players" class="cell">
-        <button class="btn-minus" (click)="decrement(player, 'makiCount')">-</button>
-        <span class="inputs">{{ player.makiCount }}</span>
-        <button class="btn-plus" (click)="increment(player, 'makiCount')">+</button>
+  <div class="roundheader">
+    <div class="blank">{{ 'ROUND' | translate }} {{ currentRound }}</div>
+  </div>
+  <div class="container2">
+    <div class="container">
+      <div class="score-table">
+
+        <div class="row header">
+          <div class="cell"></div>
+          <div *ngFor="let player of players" class="cell player-name">{{ player.playerName }}</div>
+        </div>
+        <div class="row">
+          <div class="cell">Maki</div>
+          <div *ngFor="let player of players" class="cell">
+            <div class="buttons">
+              <button class="btn-minus" (click)="decrement(player, 'makiCount',currentRound)">-</button>
+              <span class="inputs">{{ player.makiCount[currentRound - 1] }}</span>
+              <button class="btn-plus" (click)="increment(player, 'makiCount',currentRound)">+</button>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="cell">Tempura</div>
+          <div *ngFor="let player of players" class="cell">
+            <div class="buttons">
+              <button class="btn-minus" (click)="decrement(player, 'tempuraCount',currentRound)">-</button>
+              <span class="inputs">{{ player.tempuraCount[currentRound - 1] }}</span>
+              <button class="btn-plus" (click)="increment(player, 'tempuraCount',currentRound)">+</button>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="cell">Nigiri 🦑</div>
+          <div *ngFor="let player of players" class="cell">
+            <div class="buttons">
+              <button class="btn-minus" (click)="decrement(player, 'nigiriSquidCount',currentRound)">-</button>
+              <span class="inputs">{{ player.nigiriSquidCount[currentRound - 1] }}</span>
+              <button class="btn-plus" (click)="increment(player, 'nigiriSquidCount',currentRound)">+</button>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="cell">Nigiri 🐟</div>
+          <div *ngFor="let player of players" class="cell">
+            <div class="buttons">
+              <button class="btn-minus" (click)="decrement(player, 'nigiriSalmonCount',currentRound)">-</button>
+              <span class="inputs">{{ player.nigiriSalmonCount[currentRound - 1] }}</span>
+              <button class="btn-plus" (click)="increment(player, 'nigiriSalmonCount',currentRound)">+</button>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="cell">Nigiri 🥚</div>
+          <div *ngFor="let player of players" class="cell">
+            <div class="buttons">
+              <button class="btn-minus" (click)="decrement(player, 'nigiriEggCount',currentRound)">-</button>
+              <span class="inputs">{{ player.nigiriEggCount[currentRound - 1] }}</span>
+              <button class="btn-plus" (click)="increment(player, 'nigiriEggCount',currentRound)">+</button>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="cell">Wasabi</div>
+          <div *ngFor="let player of players" class="cell">
+            <div class="buttons">
+              <button class="btn-minus" (click)="decrement(player, 'wasabiCount',currentRound)">-</button>
+              <span class="inputs">{{ player.wasabiCount[currentRound - 1] }}</span>
+              <button class="btn-plus" (click)="increment(player, 'wasabiCount',currentRound)">+</button>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="cell">Sashimi</div>
+          <div *ngFor="let player of players" class="cell">
+            <div class="buttons">
+              <button class="btn-minus" (click)="decrement(player, 'sashimiCount',currentRound)">-</button>
+              <span class="inputs">{{ player.sashimiCount[currentRound - 1] }}</span>
+              <button class="btn-plus" (click)="increment(player, 'sashimiCount',currentRound)">+</button>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="cell">Gyoza</div>
+          <div *ngFor="let player of players" class="cell">
+            <div class="buttons">
+              <button class="btn-minus" (click)="decrement(player, 'gyozaCount',currentRound)">-</button>
+              <span class="inputs">{{ player.gyozaCount[currentRound - 1] }}</span>
+              <button class="btn-plus" (click)="increment(player, 'gyozaCount',currentRound)">+</button>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="cell">Pudding</div>
+          <div *ngFor="let player of players" class="cell">
+            <div class="buttons">
+              <button class="btn-minus" (click)="decrement(player, 'puddingCount',currentRound)">-</button>
+              <span class="inputs">{{ player.puddingCount[currentRound - 1] }}</span>
+              <button class="btn-plus" (click)="increment(player, 'puddingCount',currentRound)">+</button>
+            </div>
+          </div>
+        </div>
       </div>
+
+      <div class="buttons">
+        <button *ngIf="currentRound > 1" (click)="previousRound()">{{ 'PREVIOUS_ROUND' | translate }}</button>
+        <button *ngIf="currentRound < 3" (click)="showRoundSummary()">{{ 'NEXT_ROUND' | translate }}</button>
+        <button *ngIf="currentRound === 3" (click)="finishGame()">{{ 'FINISH_GAME' | translate }}</button>
       </div>
-    <div class="row">
-      <div class="cell">Tempura</div>
-      <div *ngFor="let player of players" class="cell">
-        <button class="btn-minus" (click)="decrement(player, 'tempuraCount')">-</button>
-        <span class="inputs">{{ player.tempuraCount }}</span>
-        <button class="btn-plus" (click)="increment(player, 'tempuraCount')">+</button>
-      </div>
-    </div>
-    <div class="row">
-      <div class="cell">Nigiri 🦑</div>
-      <div *ngFor="let player of players" class="cell">
-        <button class="btn-minus" (click)="decrement(player, 'nigiriSquidCount')">-</button>
-        <span class="inputs">{{ player.nigiriSquidCount }}</span>
-        <button class="btn-plus" (click)="increment(player, 'nigiriSquidCount')">+</button>
-      </div>
-    </div>
-    <div class="row">
-      <div class="cell">Nigiri 🐟</div>
-      <div *ngFor="let player of players" class="cell">
-        <button class="btn-minus" (click)="decrement(player, 'nigiriSalmonCount')">-</button>
-        <span class="inputs">{{ player.nigiriSalmonCount }}</span>
-        <button class="btn-plus" (click)="increment(player, 'nigiriSalmonCount')">+</button>
-      </div>
-    </div>
-    <div class="row">
-      <div class="cell">Nigiri 🥚</div>
-      <div *ngFor="let player of players" class="cell">
-        <button class="btn-minus" (click)="decrement(player, 'nigiriEggCount')">-</button>
-        <span class="inputs">{{ player.nigiriEggCount }}</span>
-        <button class="btn-plus" (click)="increment(player, 'nigiriEggCount')">+</button>
-      </div>
-    </div>
-    <div class="row">
-      <div class="cell">Wasabi</div>
-      <div *ngFor="let player of players" class="cell">
-        <button class="btn-minus" (click)="decrement(player, 'wasabiCount')">-</button>
-        <span class="inputs">{{ player.wasabiCount }}</span>
-        <button class="btn-plus" (click)="increment(player, 'wasabiCount')">+</button>
-      </div>
-    </div>
-    <div class="row">
-      <div class="cell">Sashimi</div>
-      <div *ngFor="let player of players" class="cell">
-        <button class="btn-minus" (click)="decrement(player, 'sashimiCount')">-</button>
-        <span class="inputs">{{ player.sashimiCount }}</span>
-        <button class="btn-plus" (click)="increment(player, 'sashimiCount')">+</button>
-      </div>
-    </div>
-    <div class="row">
-      <div class="cell">Gyoza</div>
-      <div *ngFor="let player of players" class="cell">
-        <button class="btn-minus" (click)="decrement(player, 'gyozaCount')">-</button>
-        <span class="inputs">{{ player.gyozaCount }}</span>
-        <button class="btn-plus" (click)="increment(player, 'gyozaCount')">+</button>
-      </div>
-    </div>
-    <div class="row">
-      <div class="cell">Pudding</div>
-      <div *ngFor="let player of players" class="cell">
-        <button class="btn-minus" (click)="decrement(player, 'puddingCount')">-</button>
-        <span class="inputs">{{ player.puddingCount }}</span>
-        <button class="btn-plus" (click)="increment(player, 'puddingCount')">+</button>
+
+      <div class="warning">
+        <div class="warning-icon">
+          <img src="assets/icono_warning.png" alt="Warning Icon">
+        </div>
+        <div class="warning-text">
+          <p>{{ 'WARNING_MESSAGE' | translate }}</p>
+        </div>
       </div>
     </div>
   </div>
-
-  <div class="buttons">
-    <button *ngIf="currentRound < 3" (click)="showRoundSummary()">{{ 'NEXT_ROUND' | translate }}</button>
-    <button *ngIf="currentRound === 3" (click)="finishGame()">{{ 'FINISH_GAME' | translate }}</button>
-  </div>
-
-  <div class="warning">
-    <div class="warning-icon">
-      <img src="assets/icono_warning.png" alt="Warning Icon">
-    </div>
-    <div class="warning-text">
-      <p>{{ 'WARNING_MESSAGE' | translate }}</p>
-    </div>
-  </div>
 </div>
+</html>
 </div>
-
-<footer class="footer">
-  <div class="footer-content">
-    <p>&copy;{{ 'COPYRIGHT' | translate }};
-    </p>
-  </div>
-</footer>
-
-
-
-</div>
-

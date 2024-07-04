@@ -1,4 +1,16 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SushiGoCalc!</title>
 
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <link rel="apple-touch-icon" href="src/assets/icon-192x192.png">
+  <!-- Otros enlaces y metaetiquetas -->
+</head>
 <div class="cuerpo">
   <div class="landing-page">
     <div class="landing-container">
@@ -6,7 +18,7 @@
       <h1>{{ 'WELCOME_MESSAGE' | translate }}</h1>
       <div class="button-container">
         <button class="button"(click)="play()">{{ 'START_GAME' | translate }}</button> 
-        <button (click)="howtoPlay()">{{ 'HOW_TO_PLAY' | translate }}</button>
+        <button class="button"(click)="howtoPlay()">{{ 'HOW_TO_PLAY' | translate }}</button>
       </div>
     </div>
     <div class="makisu">
@@ -22,5 +34,6 @@
  
 </div>
 </div>
+</html>
 
 

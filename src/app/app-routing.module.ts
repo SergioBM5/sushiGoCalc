@@ -6,15 +6,16 @@ import { RankingComponent } from './components/ranking/ranking.component';
 import { PlayerConfigComponent } from './components/players/player-config/player-config.component';
 import { RoundSummaryComponent } from './components/summary/summary.component';
 import { InstruccionesComponent } from './components/instrucciones/instrucciones.component';
-import { AccessGuard } from './access.guard';
+import { ReviewComponent } from './components/review/review.component';
 
 const routes: Routes = [
-  { path: 'puntuacion', component: PuntuacionComponent, canActivate: [AccessGuard]},
-  { path: 'player-config', component: PlayerConfigComponent, canActivate: [AccessGuard] },
+  { path: 'puntuacion', component: PuntuacionComponent},
+  { path: 'player-config', component: PlayerConfigComponent },
   { path: '', component: LandingPageComponent},  // La ruta raíz dirigirá a la landing page
-  { path: 'ranking', component: RankingComponent, canActivate: [AccessGuard]},
-  { path: 'summary', component: RoundSummaryComponent, canActivate: [AccessGuard]},
-  { path: 'instrucciones', component: InstruccionesComponent,canActivate: [AccessGuard]},
+  { path: 'ranking', component: RankingComponent },
+  { path: 'summary', component: RoundSummaryComponent, },
+  { path: 'instrucciones', component: InstruccionesComponent},
+  { path: 'review', component: ReviewComponent},
   { path: '**', redirectTo: '' }
 
   // Otras rutas de la aplicación...

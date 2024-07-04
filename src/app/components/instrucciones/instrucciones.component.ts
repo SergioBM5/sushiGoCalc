@@ -16,4 +16,16 @@ export class InstruccionesComponent {
     this.router.navigateByUrl('/');
    }
 
+showSection(sectionId: string): void {
+const sections = document.querySelectorAll('.content-section') as NodeListOf<HTMLDivElement>;
+  sections.forEach((section) => {
+      section.style.display = 'none';
+  });
+
+  const sectionToShow = document.getElementById(sectionId);
+   if (sectionToShow) {
+       sectionToShow.style.display = 'block';
+    }
+}
+
 }

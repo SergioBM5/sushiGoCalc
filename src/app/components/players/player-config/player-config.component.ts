@@ -23,28 +23,36 @@ export class PlayerConfigComponent {
   players: PlayerData[] = [{
     index: 0,
     playerName: '',
-    makiCount: 0,
-    tempuraCount: 0,
-    nigiriSquidCount: 0,
-    nigiriSalmonCount: 0,
-    nigiriEggCount: 0,
-    wasabiCount: 0,
-    sashimiCount: 0,
-    gyozaCount: 0,
-    puddingCount: 0,
+    makis:0,
+    tempuras:0,
+    nigiriSquid:0,
+    nigiriSalmon:0,
+    nigiriEgg:0,
+    wasabi:0,
+    sashimi:0,
+    gyoza:0,
+    pudding:0,
+    totalPudding:0,
+    makiCount: [0,0,0],
+    tempuraCount: [0,0,0],
+    nigiriSquidCount:[0,0,0],
+    nigiriSalmonCount: [0,0,0],
+    nigiriEggCount: [0,0,0],
+    wasabiCount: [0,0,0],
+    sashimiCount: [0,0,0],
+    gyozaCount: [0,0,0],
+    puddingCount: [0,0,0],
     totalPoints: 0,
-    totalPuddings: 0,
-    pointsRound1: 0,
-    pointsRound2: 0,
-    pointsRound3: 0,
-    makipoints: 0,
-    tempurapoints: 0,
-    nigirisquidpoints: 0,
-    nigiriSalmonpoints: 0,
-    nigiriEggpoints: 0,
-    sashimipoints: 0,
-    gyozaPoints: 0,
-    puddingPoints: 0
+    totalPuddings: [0,0,0],
+    pointsRound: [0,0,0],
+    makipoints: [0,0,0],
+    tempurapoints: [0,0,0],
+    nigirisquidpoints: [0,0,0],
+    nigiriSalmonpoints: [0,0,0],
+    nigiriEggpoints: [0,0,0],
+    sashimipoints: [0,0,0],
+    gyozaPoints: [0,0,0],
+    puddingPoints: [0,0,0]
   }]; // Arreglo de jugadores inicializado con un jugador vacío
   playerName: boolean = false; 
   showAddButton: boolean = true;
@@ -60,28 +68,36 @@ export class PlayerConfigComponent {
       const newPlayer: PlayerData = {
         index: this.players.length > 0 ? Math.max(...this.players.map(p => p.index)) + 1 : 0,
         playerName: '',
-        makiCount: 0,
-        tempuraCount: 0,
-        nigiriSquidCount: 0,
-        nigiriSalmonCount: 0,
-        nigiriEggCount: 0,
-        wasabiCount: 0,
-        sashimiCount: 0,
-        gyozaCount: 0,
-        puddingCount: 0,
+        makis:0,
+        tempuras:0,
+        nigiriSquid:0,
+        nigiriSalmon:0,
+        nigiriEgg:0,
+        wasabi:0,
+        sashimi:0,
+        gyoza:0,
+        pudding:0,
+        totalPudding:0,
+        makiCount: [0,0,0],
+        tempuraCount: [0,0,0],
+        nigiriSquidCount: [0,0,0],
+        nigiriSalmonCount: [0,0,0],
+        nigiriEggCount: [0,0,0],
+        wasabiCount: [0,0,0],
+        sashimiCount: [0,0,0],
+        gyozaCount: [0,0,0],
+        puddingCount: [0,0,0],
         totalPoints: 0,
-        totalPuddings: 0,
-        pointsRound1: 0,
-        pointsRound2: 0,
-        pointsRound3: 0,
-        makipoints: 0,
-        tempurapoints: 0,
-        nigirisquidpoints: 0,
-        nigiriSalmonpoints: 0,
-        nigiriEggpoints: 0,
-        sashimipoints: 0,
-        gyozaPoints: 0,
-        puddingPoints: 0
+        totalPuddings: [0,0,0],
+        pointsRound: [0,0,0],
+        makipoints: [0,0,0],
+        tempurapoints: [0,0,0],
+        nigirisquidpoints: [0,0,0],
+        nigiriSalmonpoints: [0,0,0],
+        nigiriEggpoints:[0,0,0],
+        sashimipoints: [0,0,0],
+        gyozaPoints: [0,0,0],
+        puddingPoints: [0,0,0]
       };
       this.players.push(newPlayer);
       this.updateAddButtonVisibility();
@@ -97,13 +113,6 @@ export class PlayerConfigComponent {
     this.updateAddButtonVisibility();
   
   }
-
-  private updatePlayerIndexes(): void {
-    this.players.forEach((player, index) => {
-      player.index = index;
-    });
-  }
-
   private updateAddButtonVisibility(): void {
     this.showAddButton = this.players.length < 5; // Actualiza la visibilidad del botón de agregar
   }

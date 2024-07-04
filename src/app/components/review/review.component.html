@@ -14,25 +14,28 @@
 <div class="table-container">
 <div class="table">
 <div class="container summary-container">
-    <h2 class="header">{{ 'ROUND_SUMMARY_TITLE' | translate }} {{ currentRound }}</h2>
+    <h2>{{ 'GAME_SUMMARY' | translate }}</h2>
     <table class="score-table">
       <thead>
         <tr>
           <th>{{ 'PLAYER' | translate }}</th>
-          <th>{{ 'POINTS' | translate }}</th>
+          <th>{{ 'POINTS_1' | translate }}</th>
+          <th>{{ 'POINTS_2' | translate }}</th>
+          <th>{{ 'POINTS_3' | translate }}</th>
           <th>{{ 'TOTAL_POINTS' | translate }}</th>
         </tr>
       </thead>
       <tbody>
         <tr *ngFor="let player of players">
           <td>{{ player.playerName }}</td>
-          <td>{{ getPointsForRound(player, currentRound) }}</td>
+          <td>{{ player.pointsRound[0]}}</td>
+          <td>{{ player.pointsRound[1]}}</td>
+          <td>{{ player.pointsRound[2]}}</td>
           <td>{{ player.totalPoints }}</td>
         </tr>
       </tbody>
     </table>
     <div class="button-container">
-      <button class="next-round-btn" (click)="goToNextRound()">{{ 'NEXT_ROUND_BUTTON' | translate }}</button>
       <button (click)="goBack()">{{ 'BACK_BUTTON' | translate }}</button>
     </div>
   </div>

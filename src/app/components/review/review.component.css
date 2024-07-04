@@ -21,7 +21,7 @@
   }
   
   .score-table {
-    border: 3px solid black;
+    border: 2px solid black;
     background-color: floralwhite;
     width: 100%;
     border-collapse: collapse;
@@ -41,20 +41,16 @@
     align-items: center;
     min-height: 90vh; /* Asegura que el contenedor ocupe toda la altura de la ventana */
   }
-
-  .header{
-    color:white !important;
-  }
   
   .table {
     border: 2px solid black;
     max-width: fit-content;
-    margin: 12vh auto; /* Puedes ajustar o remover esto si es necesario */
-    padding: 20px;
+    margin: 12vh 1vh;
+    padding: 10px;
     border-radius: 8px;
     box-shadow: 10px 10px 4px rgba(0, 0, 0, 0.1);
-    background-color: #373c27;
-    overflow: auto; /* Contenedor clearfix */
+    background-color: bisque;
+    overflow: auto;
   }
   .score-table th {
     background-color: #f2f2f2;
