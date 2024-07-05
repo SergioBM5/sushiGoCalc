@@ -33,6 +33,19 @@
           <td>{{ player.pointsRound[2]}}</td>
           <td>{{ player.totalPoints }}</td>
         </tr>
+        <tr>
+          <td></td>
+          <td>
+            <button (click)="goTo(1, true)">{{ 'GO_TO_ROUND_1' | translate }}</button>
+          </td>
+          <td>
+            <button (click)="goTo(2, true)">{{ 'GO_TO_ROUND_2' | translate }}</button>
+          </td>
+          <td>
+            <button (click)="goTo(3, true)">{{ 'GO_TO_ROUND_3' | translate }}</button>
+          </td>
+          <td></td>
+        </tr>
       </tbody>
     </table>
     <div class="button-container">

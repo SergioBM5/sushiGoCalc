@@ -26,10 +26,17 @@ export class ReviewComponent {
 
   ngOnInit(): void {
     this.players = this.PlayerConfigService.getPlayerData(); // Corregir el nombre del método para obtener los datos del servicio
+    this.players.sort((a, b) => a.index - b.index);
   }
 
   goBack(): void {
   
     this.router.navigate(['/ranking'], { state: { players: this.players,  round: this.currentRound } });
   }
+  goTo(round: number, fromReview: boolean = false) {
+    // Lógica para navegar a la ronda especificada
+    this.router.navigate(['/puntuacion'], { state: { players: this.players,  round: round, fromReview } });
+  }
+
+
 }

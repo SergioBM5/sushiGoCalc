@@ -27,6 +27,9 @@
     "PREVIOUS_ROUND": "Ronda Anterior",
     "BACK_BUTTON": "Volver",
     "CHECK_ROUNDS_BUTTON":"Revisar Puntos",
+    "GO_TO_ROUND_1": "Revisar Ronda 1",
+    "GO_TO_ROUND_2": "Revisar Ronda 2",
+    "GO_TO_ROUND_3": "Revisar Ronda 3",
 
     "NO_PLAYERS_MESSAGE": "No hay jugadores inscritos",
     "RETURN_HOME_BUTTON": "Volver a inicio",

@@ -14,19 +14,20 @@ export class PuntuacionComponent implements OnInit {
   totalPointsByRound: number[][] = [];
   currentRound: number = 1;
   round: number = 1;
+  fromReview: boolean = false;
 
   constructor(
     private router: Router,
     private playerConfigService: PlayerConfigService,
     private roundService: RoundService,
-    private changeDetectorRef: ChangeDetectorRef
   ) {
     
     const navigation = this.router.getCurrentNavigation();
     if (navigation?.extras?.state) {
-      const state = navigation.extras.state as { players: PlayerData[], round: number };
+      const state = navigation.extras.state as { players: PlayerData[], round: number , fromReview: boolean};
       this.players = state.players;
       this.round = state.round;
+      this.fromReview = state.fromReview || false;
     }
     this.currentRound = this.round 
   }// Obtener la ronda actual del servicio}
@@ -106,43 +107,43 @@ export class PuntuacionComponent implements OnInit {
     let nigiriEggPoints = 0;
 
     // Asignar wasabis a los nigiris de mayor valor
-    let remainingWasabiCount = player.wasabiCount;
+    let remainingWasabiCount = player.wasabiCount[roundNumber - 1];
 
-    if (remainingWasabiCount[roundNumber - 1] > 0) {
+    if (remainingWasabiCount > 0) {
       // Asignar wasabis a los nigiris de calamar
       let squidNigirisWithWasabi = Math.min(
-        remainingWasabiCount[roundNumber - 1],
+        remainingWasabiCount,
         player.nigiriSquidCount[roundNumber - 1]
       );
       nigiriSquidPoints +=
         squidNigirisWithWasabi * 9 +
         (player.nigiriSquidCount[roundNumber - 1] - squidNigirisWithWasabi) * 3;
-      remainingWasabiCount[roundNumber - 1] -= squidNigirisWithWasabi;
+      remainingWasabiCount -= squidNigirisWithWasabi;
     } else {
       nigiriSquidPoints += player.nigiriSquidCount[roundNumber - 1] * 3;
     }
-    if (remainingWasabiCount[roundNumber - 1] > 0) {
+    if (remainingWasabiCount > 0) {
       // Asignar wasabis a los nigiris de salmón
       let salmonNigirisWithWasabi = Math.min(
-        remainingWasabiCount[roundNumber - 1],
+        remainingWasabiCount,
         player.nigiriSalmonCount[roundNumber - 1]
       );
       nigiriSalmonPoints += salmonNigirisWithWasabi * 6;
       +((player.nigiriSalmonCount[roundNumber - 1] - salmonNigirisWithWasabi) * 2);
-      remainingWasabiCount[roundNumber - 1] -= salmonNigirisWithWasabi;
+      remainingWasabiCount -= salmonNigirisWithWasabi;
     } else {
       nigiriSalmonPoints += player.nigiriSalmonCount[roundNumber - 1] * 2;
     }
-    if (remainingWasabiCount[roundNumber - 1] > 0) {
+    if (remainingWasabiCount > 0) {
       // Asignar wasabis a los nigiris de huevo
       let eggNigirisWithWasabi = Math.min(
-        remainingWasabiCount[roundNumber - 1],
+        remainingWasabiCount,
         player.nigiriEggCount[roundNumber - 1]
       );
       nigiriEggPoints +=
         eggNigirisWithWasabi * 3 +
         (player.nigiriEggCount[roundNumber - 1] - eggNigirisWithWasabi);
-      remainingWasabiCount[roundNumber - 1] -= eggNigirisWithWasabi;
+      remainingWasabiCount -= eggNigirisWithWasabi;
     } else {
       nigiriEggPoints += player.nigiriEggCount[roundNumber - 1] * 1;
     }
@@ -186,23 +187,26 @@ export class PuntuacionComponent implements OnInit {
   calcularPuntosPuddings(player: PlayerData, roundNumber: number): void {
     let points = 0;
     if (roundNumber === 3) {
+      this.players.forEach(player => {
+        player.totalPudding = player.puddingCount[0] + player.puddingCount[1] + player.puddingCount[2];
+      });
       const maxPuddings = Math.max(
-        ...this.players.map((player) => player.puddingCount[roundNumber - 1])
+        ...this.players.map((player) => player.totalPudding)
       );
       const minPuddings = Math.min(
-        ...this.players.map((player) => player.puddingCount[roundNumber - 1])
+        ...this.players.map((player) => player.totalPudding)
       );
 
-      if (player.puddingCount[roundNumber - 1] === maxPuddings) {
+      if (player.totalPudding === maxPuddings) {
         const maxPlayers = this.players.filter(
-          (p) => p.puddingCount[roundNumber - 1] === maxPuddings
+          (p) => p.totalPudding === maxPuddings
         ).length;
         points += Math.floor(6 / maxPlayers);
       }
 
-      if (player.puddingCount[roundNumber - 1] === minPuddings) {
+      if (player.totalPudding === minPuddings) {
         const minPlayers = this.players.filter(
-          (p) => p.puddingCount[roundNumber - 1] === minPuddings
+          (p) => p.totalPudding === minPuddings
         ).length;
         points -= Math.floor(6 / minPlayers);
       }
@@ -273,7 +277,7 @@ export class PuntuacionComponent implements OnInit {
           player.gyozaPoints[0] = player.gyozaPoints[0];
           player.pudding= player.puddingCount[0];
           player.puddingPoints[0] = player.puddingPoints[0];
-          player.totalPudding = player.totalPuddings[0] + player.totalPuddings[1] + player.totalPuddings[2];
+          player.totalPudding = player.puddingCount[0] + player.puddingCount[1] + player.puddingCount[2];
           player.totalPoints = player.totalPoints - player.pointsRound[0];
           player.pointsRound[0] = 0
         });
@@ -298,7 +302,7 @@ export class PuntuacionComponent implements OnInit {
           player.gyozaPoints[1] = player.gyozaPoints[1];
           player.pudding= player.puddingCount[1];
           player.puddingPoints[1] = player.puddingPoints[1];
-          player.totalPudding = player.totalPuddings[0] + player.totalPuddings[1] + player.totalPuddings[2];
+          player.totalPudding = player.puddingCount[0] + player.puddingCount[1] + player.puddingCount[2];
           player.totalPoints = player.totalPoints - player.pointsRound[1];
           player.pointsRound[1] = 0
         });
@@ -323,7 +327,7 @@ export class PuntuacionComponent implements OnInit {
           player.gyozaPoints[2] = player.gyozaPoints[2];
           player.pudding= player.puddingCount[2];
           player.puddingPoints[2] = player.puddingPoints[2];
-          player.totalPudding = player.totalPuddings[0] + player.totalPuddings[1] + player.totalPuddings[2];
+          player.totalPudding = player.puddingCount[0] + player.puddingCount[1] + player.puddingCount[2];
           player.totalPoints = player.totalPoints - player.pointsRound[2];
           player.pointsRound[2] = 0
         });
@@ -356,5 +360,30 @@ export class PuntuacionComponent implements OnInit {
     } else {
       throw new Error(`El campo ${String(field)} no es un arreglo y no se puede indexar.`);
     }
+  }
+
+  goToRound(round: number, fromReview: boolean = false) {
+    this.router.navigate(['/puntuacion'], { state: { players: this.players, round, fromReview } });
+  }
+
+  finishReview(): void {
+    this.players.forEach(player => {
+      // Asignar los valores de la ronda anterior a las propiedades actuales
+      player.makipoints[this.currentRound - 1] = 0;
+      player.tempurapoints[this.currentRound - 1] = 0;
+      player.nigirisquidpoints[this.currentRound - 1] = 0;
+      player.nigiriSalmonpoints[this.currentRound - 1] = 0;
+      player.nigiriEggpoints[this.currentRound - 1] = 0;
+      player.sashimipoints[this.currentRound - 1] = 0;
+      player.gyozaPoints[this.currentRound - 1] = 0;
+      player.puddingPoints[this.currentRound] = 0;
+      player.wasabi= player.wasabiCount[this.currentRound - 1];
+      player.totalPudding = player.totalPudding - player.puddingCount[this.currentRound - 1];
+      player.totalPoints = player.totalPoints - player.pointsRound[this.currentRound - 1];
+      player.pointsRound[this.currentRound - 1] = 0
+    });
+    this.getRoundPointsForPlayer();
+    this.getFinalPointsForPlayers();
+    this.router.navigate(["/ranking"], { state: { players: this.players } });
   }
 }

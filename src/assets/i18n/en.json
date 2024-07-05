@@ -29,6 +29,9 @@
   "PREVIOUS_ROUND": "Previous Round",
   "BACK_BUTTON": "Back",
   "CHECK_ROUNDS_BUTTON":"Check Points",
+  "GO_TO_ROUND_1": "Check Round 1",
+  "GO_TO_ROUND_2": "Check Round 2",
+  "GO_TO_ROUND_3": "Check Round 3",
 
   "NO_PLAYERS_MESSAGE": "No players registered",
   "RETURN_HOME_BUTTON": "Return to Home",

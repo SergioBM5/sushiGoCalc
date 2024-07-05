@@ -115,7 +115,11 @@
         </div>
       </div>
 
-      <div class="buttons">
+      <div *ngIf="fromReview" class="buttons">
+        <button (click)="finishReview()">Terminar Revisión</button>
+      </div>
+
+      <div *ngIf="!fromReview" class="buttons">
         <button *ngIf="currentRound > 1" (click)="previousRound()">{{ 'PREVIOUS_ROUND' | translate }}</button>
         <button *ngIf="currentRound < 3" (click)="showRoundSummary()">{{ 'NEXT_ROUND' | translate }}</button>
         <button *ngIf="currentRound === 3" (click)="finishGame()">{{ 'FINISH_GAME' | translate }}</button>
