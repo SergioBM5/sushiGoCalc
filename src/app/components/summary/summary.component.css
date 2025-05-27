@@ -291,11 +291,10 @@
   /* Mejoras para la cabecera */
   .header {
     font-family: 'Luckiest Guy', cursive;
-    color: #373c27;
+    color: #f7f7f7;
     margin: 32px 0 18px 0;
     font-size: 1.4em;
     letter-spacing: 1.2px;
-    text-shadow: 0 2px 8px #fff8e1;
   }
 
   /* Responsive ajustes visuales */
