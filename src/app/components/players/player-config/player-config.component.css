@@ -26,57 +26,61 @@
 
 /* Estilos para el encabezado */
 .header {
-  color: white;
-  font-size: 24px;
-  margin-bottom: 20px;
+  color: #373c27;
+  font-size: 1.35em;
+  margin-bottom: 24px;
+  font-family: 'Luckiest Guy', cursive;
+  letter-spacing: 1px;
 }
 
 /* Estilos para cada elemento de la lista de jugadores */
 .player-item {
-  
-  margin-bottom: 10px;
+  margin-bottom: 16px;
   display: flex;
   align-items: center;
   border-radius: 10px;
-  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 2px 2px 8px rgba(0,0,0,0.06);
+  background: #fff;
+  padding: 8px 12px;
+  transition: box-shadow 0.18s;
+}
+
+.player-item:hover {
+  box-shadow: 0 4px 16px #ffe08299;
 }
 
 /* Estilos para el campo de entrada de texto */
-.player-item input {
+.player-input {
   flex-grow: 1;
-  font-size: 16px;
-  padding: 8px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
+  font-size: 1.08em;
+  padding: 8px 10px;
+  border: 1.5px solid #d2d2a4;
+  border-radius: 6px;
   outline: none;
-  min-width: 0; /* Asegura que el input no exceda el tamaño del contenedor */
-  
+  margin-right: 10px;
+  background: #fffde7;
+  transition: border 0.18s;
+}
+
+.player-input:focus {
+  border: 2px solid #b4b477;
 }
 
 /* Estilos para los botones de los elementos de la lista de jugadores */
-.player-item button {
-  margin-left: 10px;
-  border: none;
-  border-radius: 8px;
-  padding: 8px 12px;
-  cursor: pointer;
-  font-family: 'Luckiest Guy';
-  box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.05);
-}
-
-/* Estilos para el botón de agregar jugador */
-.add-button {
-  color: #fff;
-  border: none;
-  border-radius: 50%;
-  padding: 15px;
-  cursor: pointer;
-  border: 1px solid black;
-}
-
-/* Estilos para el icono del botón de agregar jugador */
-.add-button i {
-  font-size: 24px;
+.player-badge {
+  background: linear-gradient(90deg, #ffe082 60%, #fffde7 100%);
+  color: #373c27;
+  border-radius: 10px;
+  padding: 4px 14px;
+  font-size: 1.01em;
+  font-weight: 700;
+  margin-left: 8px;
+  margin-right: 8px;
+  box-shadow: 0 1px 2px rgba(55,60,39,0.09);
+  border: 1px solid #ffe082;
+  letter-spacing: 0.2px;
+  min-width: 60px;
+  text-align: center;
 }
 
 /* Estilos para el botón de eliminar */
@@ -84,30 +88,63 @@
   background-color: #D1F2EB;
   color: #000;
   border: none;
-  border-radius: 3px;
+  border-radius: 6px;
   padding: 8px 12px;
   cursor: pointer;
+  margin-left: 8px;
+  font-size: 1.1em;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  transition: background 0.2s, transform 0.15s;
+}
+
+.delete-button:hover {
+  background-color: #f87272;
+  color: #fff;
+  transform: scale(1.08);
 }
 
 /* Estilos para los botones generales */
-.button button {
-  border: none !important;
-  border-radius: 5px;
-  display: block;
-  margin: 20px auto;
-  padding: 10px 20px;
-  font-size: 16px;
-  cursor: pointer;
-  background-color: #D2D2A4;
-  color: #000;  
-  font-family: 'Luckiest Guy';
-
+.button {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
+.play-button {
+  border: none !important;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 12px auto 0 auto;
+  padding: 12px 28px;
+  font-size: 1.12em;
+  cursor: pointer;
+  background-color: #d2d2a4;
+  color: #222;
+  font-family: 'Luckiest Guy';
+  font-weight: 600;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  transition: background 0.2s, transform 0.15s;
+}
 
-/* Estilos para el botón de hover */
-.button button:hover {
-  background-color: #FCF3CF;
+.play-button:hover {
+  background-color: #b4b477;
+  color: #222;
+  transform: scale(1.05);
+}
+
+.add-player-btn {
+  background: linear-gradient(90deg, #ffe082 60%, #fffde7 100%);
+  color: #373c27;
+  border: 1.5px solid #ffe082;
+}
+
+.start-btn {
+  background: linear-gradient(90deg, #e6e6c3 0%, #d2d2a4 100%);
+  color: #373c27;
+  border: 1.5px solid #d2d2a4;
 }
 
 .alert-container {
@@ -126,7 +163,60 @@
 
 @media (max-width: 768px) {
   .alert-container {
+    width: 266px;
+    z-index: 1000;
+    padding: 1.25rem;
+    margin: 15px;
+    display: flex;
+    justify-content: center;
+    background-color: #f87272;
+    border-radius: 15px;
+    border: 3px solid black;
+    box-shadow: 10px 10px 4px #0000000d;
+    align-items: center;
+  }
+}
+@media (max-width: 480px) {
+  .alert-container {
+    width: 266px;
+    z-index: 1000;
+    padding: 1.25rem;
+    margin: 15px;
+    display: flex;
+    justify-content: center;
+    background-color: #f87272;
+    border-radius: 15px;
+    border: 3px solid black;
+    box-shadow: 10px 10px 4px #0000000d;
+    align-items: center;
+  }
+}
 
+.player-config-card {
+  background: #fffbe6;
+  border-radius: 16px;
+  box-shadow: 0 4px 16px rgba(55,60,39,0.10);
+  padding: 32px 24px 24px 24px;
+  max-width: 420px;
+  margin: 40px auto 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 2.5px solid #d2d2a4;
+}
+
+.player-list {
+  width: 100%;
+  margin-bottom: 24px;
+}
+
+@media (max-width: 600px) {
+  .player-config-card {
+    padding: 16px 4px 12px 4px;
+    max-width: 98vw;
+  }
+  .player-item {
+    padding: 6px 2px;
 width: 266px;
 z-index: 1000;
 padding: 1.25rem;

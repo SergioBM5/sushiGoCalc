@@ -20,24 +20,25 @@
     <div>{{ errorMessage }}</div>
   </c-alert>
 
-    <div class="button-container">
-      <p class="header">{{ 'HEADER' | translate }}</p>
-      <div class="player-list">
-        <div class="player-item" *ngFor="let player of players; let i = index">
-          <input type="text" [ngModel]="player.playerName" (ngModelChange)="updatePlayer($event, i)" class="player-input">
-          <button class="delete-button" *ngIf="players.length >= 2" (click)="deletePlayer(i)"> <fa-icon [icon]="faTrashAlt"></fa-icon> </button>
-        </div>
-      </div>
-      <div class="button">
-        <button *ngIf="showAddButton" class="play-button" (click)="addPlayer()">
-          {{ 'ADD_PLAYER' | translate }}
-        </button>
-        <button class="play-button" (click)="play()"> 
-          {{ 'START_GAME' | translate }}
-        </button>
+  <div class="player-config-card">
+    <p class="header">{{ 'HEADER' | translate }}</p>
+    <div class="player-list">
+      <div class="player-item" *ngFor="let player of players; let i = index">
+        <input type="text" [ngModel]="player.playerName" (ngModelChange)="updatePlayer($event, i)" class="player-input" placeholder="{{ 'PLAYER_NAME_PLACEHOLDER' | translate }}">
+        <span class="player-badge">{{ player.playerName || ('PLAYER' | translate) + ' ' + (i+1) }}</span>
+        <button class="delete-button" *ngIf="players.length >= 2" (click)="deletePlayer(i)"> <fa-icon [icon]="faTrashAlt"></fa-icon> </button>
       </div>
     </div>
+    <div class="button">
+      <button *ngIf="showAddButton" class="play-button add-player-btn" (click)="addPlayer()">
+        <fa-icon icon="user-plus"></fa-icon> {{ 'ADD_PLAYER' | translate }}
+      </button>
+      <button class="play-button start-btn" (click)="play()"> 
+        <fa-icon icon="play"></fa-icon> {{ 'START_GAME' | translate }}
+      </button>
+    </div>
   </div>
+</div>
   </html>
  
   
