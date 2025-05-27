@@ -63,17 +63,19 @@ export class PuntuacionComponent implements OnInit {
         let secondMaxMakiCount = Math.max(
           ...this.players
             .filter((p) => p.makiCount[roundNumber - 1] < maxMakiCount)
-            .map((p) => p.makiCount[roundNumber - 1])
+            .map((p) => p.makiCount[roundNumber - 1]), 0
         );
-        const secondPlacePlayers: PlayerData[] = this.players.filter(
-          (p) => p.makiCount[roundNumber - 1] === secondMaxMakiCount
-        );
-        if (secondPlacePlayers.length > 0) {
-          const pointsForSecondPlace = Math.floor(3 / secondPlacePlayers.length);
-          secondPlacePlayers.forEach((p) => {
-            this.updateRoundPoints(p.index, roundNumber, pointsForSecondPlace);
-            this.players[p.index].makipoints[roundNumber - 1] = pointsForSecondPlace;
-          });
+        if (secondMaxMakiCount > 0) {
+          const secondPlacePlayers: PlayerData[] = this.players.filter(
+            (p) => p.makiCount[roundNumber - 1] === secondMaxMakiCount
+          );
+          if (secondPlacePlayers.length > 0) {
+            const pointsForSecondPlace = Math.floor(3 / secondPlacePlayers.length);
+            secondPlacePlayers.forEach((p) => {
+              this.updateRoundPoints(p.index, roundNumber, pointsForSecondPlace);
+              this.players[p.index].makipoints[roundNumber - 1] = pointsForSecondPlace;
+            });
+          }
         }
       } else {
         const pointsPerPlayer = Math.floor(6 / topPlayers.length);
