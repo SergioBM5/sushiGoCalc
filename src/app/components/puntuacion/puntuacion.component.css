@@ -473,8 +473,6 @@
   font-weight: 600;
   color: #373c27;
   background: #fffde7;
-  border-left: 3px solid #d2d2a4;
-  border-radius: 8px 0 0 8px;
 }
 .badge-valor {
   display: inline-block;
