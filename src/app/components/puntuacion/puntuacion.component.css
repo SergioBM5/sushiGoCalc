@@ -1,19 +1,18 @@
 .cuerpo {
   display: flex;
-  justify-content: center;
-  height: 90vh;
   flex-direction: column;
   align-items: stretch;
-  overflow-y: auto;
-  max-height: 100vh;
-} 
+  height: 100vh;
+  min-height: 100vh;
+  overflow: hidden;
+}
 
 .container2 {
   display: flex;
   justify-content: center;
   width: 100%;
-  overflow-y: auto;
-  max-height: 80vh;
+  flex: 1 1 auto;
+  overflow: hidden;
 }
 
 .container {
@@ -23,10 +22,11 @@
   background-color: #fff;
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  overflow-x: auto; /* Permitir desplazamiento horizontal si el contenido se desborda */
   width: 100%;
-  overflow-y: auto;
-  max-height: 75vh;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
 }
 
 .score-table {
@@ -46,6 +46,9 @@
   margin-top: 25px;
   display: flex;
   justify-content: center;
+  z-index: 2;
+  background: #fffbe6;
+  padding-bottom: 8px;
 }
 
 .cell {
@@ -179,6 +182,8 @@
   border-radius: 10px;
   display: flex;
   align-items: center;
+  z-index: 2;
+  background: #fffbe6;
 }
 
 .warning-icon {
@@ -438,13 +443,11 @@
 }
 
 .puntuacion-table {
-  border-radius: 14px;
-  box-shadow: 0 4px 16px rgba(55,60,39,0.10);
-  border-collapse: separate;
-  border-spacing: 0;
-  overflow: hidden;
-  background: #f7f7e6;
-  margin-bottom: 32px;
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow-y: auto;
+  max-height: 55vh;
+  margin-bottom: 18px;
 }
 .puntuacion-table .row {
   transition: background 0.18s;
