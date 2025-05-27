@@ -17,99 +17,18 @@
   </div>
   <div class="container2">
     <div class="container">
-      <div class="score-table">
-
+      <div class="score-table puntuacion-table">
         <div class="row header">
           <div class="cell"></div>
           <div *ngFor="let player of players" class="cell player-name">{{ player.playerName }}</div>
         </div>
-        <div class="row">
-          <div class="cell">Maki</div>
+        <div class="row" *ngFor="let figura of figuras">
+          <div class="cell figura-label">{{ figura.label }}</div>
           <div *ngFor="let player of players" class="cell">
             <div class="buttons">
-              <button class="btn-minus" (click)="decrement(player, 'makiCount',currentRound)">-</button>
-              <span class="inputs">{{ player.makiCount[currentRound - 1] }}</span>
-              <button class="btn-plus" (click)="increment(player, 'makiCount',currentRound)">+</button>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="cell">Tempura</div>
-          <div *ngFor="let player of players" class="cell">
-            <div class="buttons">
-              <button class="btn-minus" (click)="decrement(player, 'tempuraCount',currentRound)">-</button>
-              <span class="inputs">{{ player.tempuraCount[currentRound - 1] }}</span>
-              <button class="btn-plus" (click)="increment(player, 'tempuraCount',currentRound)">+</button>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="cell">Nigiri 🦑</div>
-          <div *ngFor="let player of players" class="cell">
-            <div class="buttons">
-              <button class="btn-minus" (click)="decrement(player, 'nigiriSquidCount',currentRound)">-</button>
-              <span class="inputs">{{ player.nigiriSquidCount[currentRound - 1] }}</span>
-              <button class="btn-plus" (click)="increment(player, 'nigiriSquidCount',currentRound)">+</button>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="cell">Nigiri 🐟</div>
-          <div *ngFor="let player of players" class="cell">
-            <div class="buttons">
-              <button class="btn-minus" (click)="decrement(player, 'nigiriSalmonCount',currentRound)">-</button>
-              <span class="inputs">{{ player.nigiriSalmonCount[currentRound - 1] }}</span>
-              <button class="btn-plus" (click)="increment(player, 'nigiriSalmonCount',currentRound)">+</button>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="cell">Nigiri 🥚</div>
-          <div *ngFor="let player of players" class="cell">
-            <div class="buttons">
-              <button class="btn-minus" (click)="decrement(player, 'nigiriEggCount',currentRound)">-</button>
-              <span class="inputs">{{ player.nigiriEggCount[currentRound - 1] }}</span>
-              <button class="btn-plus" (click)="increment(player, 'nigiriEggCount',currentRound)">+</button>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="cell">Wasabi</div>
-          <div *ngFor="let player of players" class="cell">
-            <div class="buttons">
-              <button class="btn-minus" (click)="decrement(player, 'wasabiCount',currentRound)">-</button>
-              <span class="inputs">{{ player.wasabiCount[currentRound - 1] }}</span>
-              <button class="btn-plus" (click)="increment(player, 'wasabiCount',currentRound)">+</button>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="cell">Sashimi</div>
-          <div *ngFor="let player of players" class="cell">
-            <div class="buttons">
-              <button class="btn-minus" (click)="decrement(player, 'sashimiCount',currentRound)">-</button>
-              <span class="inputs">{{ player.sashimiCount[currentRound - 1] }}</span>
-              <button class="btn-plus" (click)="increment(player, 'sashimiCount',currentRound)">+</button>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="cell">Gyoza</div>
-          <div *ngFor="let player of players" class="cell">
-            <div class="buttons">
-              <button class="btn-minus" (click)="decrement(player, 'gyozaCount',currentRound)">-</button>
-              <span class="inputs">{{ player.gyozaCount[currentRound - 1] }}</span>
-              <button class="btn-plus" (click)="increment(player, 'gyozaCount',currentRound)">+</button>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="cell">Pudding</div>
-          <div *ngFor="let player of players" class="cell">
-            <div class="buttons">
-              <button class="btn-minus" (click)="decrement(player, 'puddingCount',currentRound)">-</button>
-              <span class="inputs">{{ player.puddingCount[currentRound - 1] }}</span>
-              <button class="btn-plus" (click)="increment(player, 'puddingCount',currentRound)">+</button>
+              <button class="btn-minus" (click)="decrement(player, figura.field, currentRound)">-</button>
+              <span class="inputs badge-valor">{{ getFiguraValue(player, figura.field, currentRound) }}</span>
+              <button class="btn-plus" (click)="increment(player, figura.field, currentRound)">+</button>
             </div>
           </div>
         </div>

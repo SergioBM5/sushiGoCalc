@@ -16,6 +16,18 @@ export class PuntuacionComponent implements OnInit {
   round: number = 1;
   fromReview: boolean = false;
 
+  figuras = [
+    { label: 'Maki', field: 'makiCount' },
+    { label: 'Tempura', field: 'tempuraCount' },
+    { label: 'Nigiri 🦑', field: 'nigiriSquidCount' },
+    { label: 'Nigiri 🐟', field: 'nigiriSalmonCount' },
+    { label: 'Nigiri 🥚', field: 'nigiriEggCount' },
+    { label: 'Wasabi', field: 'wasabiCount' },
+    { label: 'Sashimi', field: 'sashimiCount' },
+    { label: 'Gyoza', field: 'gyozaCount' },
+    { label: 'Pudding', field: 'puddingCount' },
+  ] as const;
+
   constructor(
     private router: Router,
     private playerConfigService: PlayerConfigService,
@@ -364,5 +376,9 @@ export class PuntuacionComponent implements OnInit {
     this.getRoundPointsForPlayer();
     this.getFinalPointsForPlayers();
     this.router.navigate(["/ranking"], { state: { players: this.players } });
+  }
+
+  getFiguraValue(player: PlayerData, field: string, currentRound: number): number {
+    return (player as any)[field][currentRound - 1] || 0;
   }
 }
