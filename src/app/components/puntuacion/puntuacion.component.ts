@@ -323,8 +323,8 @@ export class PuntuacionComponent implements OnInit {
 
   increment(player: PlayerData, field: keyof PlayerData, currentRound: number): void {
     if (Array.isArray(player[field])) {
-      // Aserción de tipo para asegurarse de que TypeScript entienda que esto es un number[]
-      (player[field] as number[])[currentRound - 1] = ((player[field] as number[])[currentRound - 1] || 0) + 1;
+      const currentValue = (player[field] as number[])[currentRound - 1] || 0;
+      (player[field] as number[])[currentRound - 1] = currentValue + 1;
     } else {
       throw new Error(`El campo ${String(field)} no es un arreglo y no se puede indexar.`);
     }
@@ -332,8 +332,10 @@ export class PuntuacionComponent implements OnInit {
   
   decrement(player: PlayerData, field: keyof PlayerData, currentRound: number): void {
     if (Array.isArray(player[field])) {
-      // Aserción de tipo para asegurarse de que TypeScript entienda que esto es un number[]
-      (player[field] as number[])[currentRound - 1] = ((player[field] as number[])[currentRound - 1] || 0) - 1;
+      const currentValue = (player[field] as number[])[currentRound - 1] || 0;
+      if (currentValue > 0) {
+        (player[field] as number[])[currentRound - 1] = currentValue - 1;
+      }
     } else {
       throw new Error(`El campo ${String(field)} no es un arreglo y no se puede indexar.`);
     }
