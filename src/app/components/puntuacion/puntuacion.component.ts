@@ -222,6 +222,14 @@ export class PuntuacionComponent implements OnInit {
     if (playerIndex >= 0 && playerIndex < this.players.length) {
       const player = this.players[playerIndex];
         player.pointsRound[roundNumber - 1] += points; 
+        player.makipoints[roundNumber - 1] = points;
+        player.tempurapoints[roundNumber - 1] = points;
+        player.nigirisquidpoints[roundNumber - 1] = points;
+        player.nigiriSalmonpoints[roundNumber - 1] = points;
+        player.nigiriEggpoints[roundNumber - 1] = points;
+        player.sashimipoints[roundNumber - 1] = points;
+        player.gyozaPoints[roundNumber - 1] = points;
+        player.puddingPoints[roundNumber] = points;
     } else {
       console.error(`Player index ${playerIndex} is out of range.`);
     }
