@@ -141,11 +141,9 @@
   /* Responsive tabla de figuras */
   @media (max-width: 900px) {
     .figures-table {
-      display: block;
-      width: 100%;
-      overflow-x: auto;
-      -webkit-overflow-scrolling: touch;
-      border-radius: 8px;
+      min-width: 600px;
+      width: max-content;
+      display: table;
     }
     .figures-table thead, .figures-table tbody, .figures-table tr, .figures-table th, .figures-table td {
       display: revert;
@@ -176,12 +174,20 @@
     }
   }
   
+  .figures-table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    margin-bottom: 32px;
+  }
+
   .figures-table {
+    min-width: 700px;
+    width: max-content;
     background: #fff8e1;
     box-shadow: 0 2px 8px rgba(55,60,39,0.08);
     border-radius: 12px;
     overflow: hidden;
-    margin-bottom: 32px;
   }
   .figures-table th, .figures-table td {
     border-bottom: 1px solid #e0cfa0;
