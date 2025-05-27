@@ -275,6 +275,7 @@
     justify-content: center;
     padding: 10px;
     flex-direction: column;
+    z-index: 0;
 
   }
   .buttons{
@@ -309,6 +310,9 @@
     font-size: 12px;
     padding: 5px;
     margin: 20px 5px 0px;
+  }
+  .footer {
+    z-index: 1000;
   }
 }
 
@@ -368,7 +372,7 @@
     justify-content: center;
     padding: 10px;
     flex-direction: column;
-
+    z-index: 0;
   }
 
   .buttons button {
@@ -380,6 +384,9 @@
     font-size: 13px;
     padding: 7px;
     margin: 30px 10px 0px;
+  }
+  .footer {
+    z-index: 1000;
   }
 }
 
@@ -405,6 +412,7 @@
     margin: 0;
     padding: 5px;
     box-shadow: none;
+    z-index: 0;
   }
 
   .buttons button {
@@ -440,6 +448,9 @@
     font-size: 11px;
     padding: 4px;
     margin: 15px 5px 0px;
+  }
+  .footer {
+    z-index: 1000;
   }
 }
 
