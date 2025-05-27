@@ -138,4 +138,41 @@
     }
   }
 
+  /* Responsive tabla de figuras */
+  @media (max-width: 900px) {
+    .score-table {
+      display: block;
+      width: 100%;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      border-radius: 8px;
+    }
+    .score-table thead, .score-table tbody, .score-table tr, .score-table th, .score-table td {
+      display: revert;
+    }
+    .score-table th, .score-table td {
+      min-width: 80px;
+      padding: 6px 2px;
+      font-size: 0.92em;
+    }
+    .score-table td span {
+      font-size: 0.85em;
+      padding: 2px 4px;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .score-table th, .score-table td {
+      min-width: 60px;
+      font-size: 0.85em;
+      padding: 4px 1px;
+    }
+    .score-table td span {
+      font-size: 0.78em;
+      padding: 1px 3px;
+    }
+    .header {
+      font-size: 1em;
+    }
+  }
   
