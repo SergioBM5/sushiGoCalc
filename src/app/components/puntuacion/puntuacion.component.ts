@@ -176,26 +176,33 @@ export class PuntuacionComponent implements OnInit {
   calcularPuntosPuddings(player: PlayerData, roundNumber: number): void {
     let points = 0;
     if (roundNumber === 3) {
+      // Calcular el total de púdines de cada jugador
       this.players.forEach(player => {
         player.totalPudding = player.puddingCount[0] + player.puddingCount[1] + player.puddingCount[2];
       });
-      const maxPuddings = Math.max(
-        ...this.players.map((player) => player.totalPudding)
-      );
-      const minPuddings = Math.min(
-        ...this.players.map((player) => player.totalPudding)
-      );
-      if (player.totalPudding === maxPuddings) {
-        const maxPlayers = this.players.filter(
-          (p) => p.totalPudding === maxPuddings
-        ).length;
-        points += Math.floor(6 / maxPlayers);
-      }
-      if (player.totalPudding === minPuddings) {
-        const minPlayers = this.players.filter(
-          (p) => p.totalPudding === minPuddings
-        ).length;
-        points -= Math.floor(6 / minPlayers);
+
+      const allPuddings = this.players.map(player => player.totalPudding);
+      const maxPuddings = Math.max(...allPuddings);
+      const minPuddings = Math.min(...allPuddings);
+
+      // Si todos tienen la misma cantidad, nadie gana ni pierde puntos
+      if (maxPuddings === minPuddings) {
+        points = 0;
+      } else {
+        // Ganadores (más púdines)
+        if (player.totalPudding === maxPuddings) {
+          const maxPlayers = this.players.filter(
+            (p) => p.totalPudding === maxPuddings
+          ).length;
+          points += Math.floor(6 / maxPlayers);
+        }
+        // Perdedores (menos púdines)
+        if (player.totalPudding === minPuddings) {
+          const minPlayers = this.players.filter(
+            (p) => p.totalPudding === minPuddings
+          ).length;
+          points -= Math.floor(6 / minPlayers);
+        }
       }
     }
     this.updateRoundPoints(player.index, roundNumber, points);
