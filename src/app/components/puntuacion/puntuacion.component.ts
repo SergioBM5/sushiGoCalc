@@ -40,78 +40,53 @@ export class PuntuacionComponent implements OnInit {
   }
 
   calcularPuntosMakis(roundNumber: number): void {
-    // Encuentra el máximo número de makis
     let maxMakiCount = Math.max(...this.players.map((p) => p.makiCount[roundNumber-1]));
-
     if (maxMakiCount !== 0) {
-      // Encuentra los jugadores con el número máximo de makis
       const topPlayers: PlayerData[] = this.players.filter(
         (p) => p.makiCount[roundNumber - 1] === maxMakiCount
       );
-
-      // Asigna los puntos para los jugadores con el número máximo de makis
       if (topPlayers.length === 1) {
         this.updateRoundPoints(topPlayers[0].index, roundNumber, 6);
         this.players[topPlayers[0].index].makipoints[roundNumber - 1] = 6;
-
-        // Encuentra el segundo máximo número de makis
         let secondMaxMakiCount = Math.max(
           ...this.players
             .filter((p) => p.makiCount[roundNumber - 1] < maxMakiCount)
             .map((p) => p.makiCount[roundNumber - 1])
         );
-
-        // Encuentra los jugadores con el segundo máximo número de makis
         const secondPlacePlayers: PlayerData[] = this.players.filter(
           (p) => p.makiCount[roundNumber - 1] === secondMaxMakiCount
         );
-
         if (secondPlacePlayers.length > 0) {
-          const pointsForSecondPlace = Math.floor(
-            3 / secondPlacePlayers.length
-          );
+          const pointsForSecondPlace = Math.floor(3 / secondPlacePlayers.length);
           secondPlacePlayers.forEach((p) => {
             this.updateRoundPoints(p.index, roundNumber, pointsForSecondPlace);
+            this.players[p.index].makipoints[roundNumber - 1] = pointsForSecondPlace;
           });
         }
       } else {
         const pointsPerPlayer = Math.floor(6 / topPlayers.length);
         topPlayers.forEach((p) => {
           this.updateRoundPoints(p.index, roundNumber, pointsPerPlayer);
+          this.players[p.index].makipoints[roundNumber - 1] = pointsPerPlayer;
         });
       }
-    } else {
-      return;
     }
   }
 
   calcularPuntosTempuras(player: PlayerData, roundNumber: number): void {
     const tempuraPairs = Math.floor(player.tempuraCount[roundNumber - 1] / 2);
     const points = tempuraPairs * 5;
-
-    if (player.tempurapoints[roundNumber - 1] !== points && player.tempurapoints[roundNumber - 1] !== 0) {
-      player.tempurapoints[roundNumber - 1] -= player.tempurapoints[roundNumber - 1];
-      this.updateRoundPoints(player.index, roundNumber, points);
-      player.tempurapoints[roundNumber - 1] = points;
-    } else {
-      this.updateRoundPoints(player.index, roundNumber, points);
-      player.tempurapoints[roundNumber - 1] = points;
-    }
+    this.updateRoundPoints(player.index, roundNumber, points);
+    player.tempurapoints[roundNumber - 1] = points;
   }
 
   calcularPuntosNigiris(player: PlayerData, roundNumber: number): void {
     let totalNigiriPoints = 0;
-
-    // Calcular puntos iniciales sin wasabi
     let nigiriSquidPoints = 0;
     let nigiriSalmonPoints = 0;
     let nigiriEggPoints = 0;
-
-    // Asignar wasabis a los nigiris de mayor valor
     let remainingWasabiCount = player.wasabiCount[roundNumber - 1];
-
     if (remainingWasabiCount > 0) {
-      // Asignar wasabis a los nigiris de calamar
       let squidNigirisWithWasabi = Math.min(
         remainingWasabiCount,
         player.nigiriSquidCount[roundNumber - 1]
@@ -124,19 +99,17 @@ export class PuntuacionComponent implements OnInit {
       nigiriSquidPoints += player.nigiriSquidCount[roundNumber - 1] * 3;
     }
     if (remainingWasabiCount > 0) {
-      // Asignar wasabis a los nigiris de salmón
       let salmonNigirisWithWasabi = Math.min(
         remainingWasabiCount,
         player.nigiriSalmonCount[roundNumber - 1]
       );
-      nigiriSalmonPoints += salmonNigirisWithWasabi * 6;
-      +((player.nigiriSalmonCount[roundNumber - 1] - salmonNigirisWithWasabi) * 2);
+      nigiriSalmonPoints += salmonNigirisWithWasabi * 6 +
+        (player.nigiriSalmonCount[roundNumber - 1] - salmonNigirisWithWasabi) * 2;
       remainingWasabiCount -= salmonNigirisWithWasabi;
     } else {
       nigiriSalmonPoints += player.nigiriSalmonCount[roundNumber - 1] * 2;
     }
     if (remainingWasabiCount > 0) {
-      // Asignar wasabis a los nigiris de huevo
       let eggNigirisWithWasabi = Math.min(
         remainingWasabiCount,
         player.nigiriEggCount[roundNumber - 1]
@@ -148,18 +121,18 @@ export class PuntuacionComponent implements OnInit {
     } else {
       nigiriEggPoints += player.nigiriEggCount[roundNumber - 1] * 1;
     }
-    // Calcular puntos totales de nigiris
-    totalNigiriPoints =
-      nigiriSquidPoints + nigiriSalmonPoints + nigiriEggPoints;
-
-    // Actualizar puntos de la ronda
+    totalNigiriPoints = nigiriSquidPoints + nigiriSalmonPoints + nigiriEggPoints;
     this.updateRoundPoints(player.index, roundNumber, totalNigiriPoints);
+    player.nigirisquidpoints[roundNumber - 1] = nigiriSquidPoints;
+    player.nigiriSalmonpoints[roundNumber - 1] = nigiriSalmonPoints;
+    player.nigiriEggpoints[roundNumber - 1] = nigiriEggPoints;
   }
 
   calcularPuntosSashimis(player: PlayerData, roundNumber: number): void {
     const sashimiTrios = Math.floor(player.sashimiCount[roundNumber - 1] / 3);
     const points = sashimiTrios * 10;
     this.updateRoundPoints(player.index, roundNumber, points);
+    player.sashimipoints[roundNumber - 1] = points;
   }
 
   calcularPuntosGyozas(player: PlayerData, roundNumber: number): void {
@@ -182,7 +155,8 @@ export class PuntuacionComponent implements OnInit {
           points = 15;
         }
     }
-    this.updateRoundPoints(player.index, roundNumber, points); // Almacena los puntos de gyoza en el jugador
+    this.updateRoundPoints(player.index, roundNumber, points);
+    player.gyozaPoints[roundNumber - 1] = points;
   }
 
   calcularPuntosPuddings(player: PlayerData, roundNumber: number): void {
@@ -197,14 +171,12 @@ export class PuntuacionComponent implements OnInit {
       const minPuddings = Math.min(
         ...this.players.map((player) => player.totalPudding)
       );
-
       if (player.totalPudding === maxPuddings) {
         const maxPlayers = this.players.filter(
           (p) => p.totalPudding === maxPuddings
         ).length;
         points += Math.floor(6 / maxPlayers);
       }
-
       if (player.totalPudding === minPuddings) {
         const minPlayers = this.players.filter(
           (p) => p.totalPudding === minPuddings
@@ -213,6 +185,7 @@ export class PuntuacionComponent implements OnInit {
       }
     }
     this.updateRoundPoints(player.index, roundNumber, points);
+    player.puddingPoints[roundNumber - 1] = points;
   }
 
   updateRoundPoints(
