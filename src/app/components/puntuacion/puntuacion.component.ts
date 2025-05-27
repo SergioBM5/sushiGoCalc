@@ -52,6 +52,7 @@ export class PuntuacionComponent implements OnInit {
       // Asigna los puntos para los jugadores con el número máximo de makis
       if (topPlayers.length === 1) {
         this.updateRoundPoints(topPlayers[0].index, roundNumber, 6);
+        this.players[topPlayers[0].index].makipoints[roundNumber - 1] = 6;
 
         // Encuentra el segundo máximo número de makis
         let secondMaxMakiCount = Math.max(
@@ -221,15 +222,7 @@ export class PuntuacionComponent implements OnInit {
   ): void {
     if (playerIndex >= 0 && playerIndex < this.players.length) {
       const player = this.players[playerIndex];
-        player.pointsRound[roundNumber - 1] += points; 
-        player.makipoints[roundNumber - 1] = points;
-        player.tempurapoints[roundNumber - 1] = points;
-        player.nigirisquidpoints[roundNumber - 1] = points;
-        player.nigiriSalmonpoints[roundNumber - 1] = points;
-        player.nigiriEggpoints[roundNumber - 1] = points;
-        player.sashimipoints[roundNumber - 1] = points;
-        player.gyozaPoints[roundNumber - 1] = points;
-        player.puddingPoints[roundNumber] = points;
+      player.pointsRound[roundNumber - 1] += points;
     } else {
       console.error(`Player index ${playerIndex} is out of range.`);
     }
