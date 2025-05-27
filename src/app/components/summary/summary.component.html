@@ -31,6 +31,49 @@
         </tr>
       </tbody>
     </table>
+    <h3 class="header">Detalle de figuras jugadas y puntos por figura (Ronda {{ currentRound }})</h3>
+    <table class="score-table">
+      <thead>
+        <tr>
+          <th>Jugador</th>
+          <th>Maki</th>
+          <th>Tempura</th>
+          <th>Nigiri 🦑</th>
+          <th>Nigiri 🐟</th>
+          <th>Nigiri 🥚</th>
+          <th>Wasabi</th>
+          <th>Sashimi</th>
+          <th>Gyoza</th>
+          <th>Pudding</th>
+        </tr>
+        <tr>
+          <th></th>
+          <th>Puntos</th>
+          <th>Puntos</th>
+          <th>Puntos</th>
+          <th>Puntos</th>
+          <th>Puntos</th>
+          <th>-</th>
+          <th>Puntos</th>
+          <th>Puntos</th>
+          <th>Puntos</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let player of players">
+          <td>{{ player.playerName }}</td>
+          <td>{{ player.makiCount[currentRound-1] }}<br><span style="font-size:12px;">({{ player.makipoints[currentRound-1] || 0 }} pts)</span></td>
+          <td>{{ player.tempuraCount[currentRound-1] }}<br><span style="font-size:12px;">({{ player.tempurapoints[currentRound-1] || 0 }} pts)</span></td>
+          <td>{{ player.nigiriSquidCount[currentRound-1] }}<br><span style="font-size:12px;">({{ player.nigirisquidpoints[currentRound-1] || 0 }} pts)</span></td>
+          <td>{{ player.nigiriSalmonCount[currentRound-1] }}<br><span style="font-size:12px;">({{ player.nigiriSalmonpoints[currentRound-1] || 0 }} pts)</span></td>
+          <td>{{ player.nigiriEggCount[currentRound-1] }}<br><span style="font-size:12px;">({{ player.nigiriEggpoints[currentRound-1] || 0 }} pts)</span></td>
+          <td>{{ player.wasabiCount[currentRound-1] }}</td>
+          <td>{{ player.sashimiCount[currentRound-1] }}<br><span style="font-size:12px;">({{ player.sashimipoints[currentRound-1] || 0 }} pts)</span></td>
+          <td>{{ player.gyozaCount[currentRound-1] }}<br><span style="font-size:12px;">({{ player.gyozaPoints[currentRound-1] || 0 }} pts)</span></td>
+          <td>{{ player.puddingCount[currentRound-1] }}<br><span style="font-size:12px;">({{ player.puddingPoints[currentRound-1] || 0 }} pts)</span></td>
+        </tr>
+      </tbody>
+    </table>
     <div class="button-container">
       <button class="next-round-btn" (click)="goToNextRound()">{{ 'NEXT_ROUND_BUTTON' | translate }}</button>
       <button (click)="goBack()">{{ 'BACK_BUTTON' | translate }}</button>

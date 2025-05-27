@@ -228,6 +228,9 @@ export class PuntuacionComponent implements OnInit {
   }
 
   getRoundPointsForPlayer(): void {
+    this.players.forEach(player => {
+      player.pointsRound[this.currentRound - 1] = 0;
+    });
     this.calcularPuntosMakis(this.currentRound);
     this.players.forEach((player) => {
       this.calcularPuntosTempuras(player, this.currentRound);
