@@ -216,7 +216,7 @@
     max-width: 98vw;
   }
   .player-item {
-    padding: 6px 2px;
+    padding: 6px 10px;
     margin-bottom: 10px;
     flex-wrap: wrap;
     width: 100%;
